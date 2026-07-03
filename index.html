@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Danais Natural Cosmetics — Cosmética Botánica para Rizos</title>
+<meta name="description" content="Cosmética botánica artesanal para cabello rizado. Sin sulfatos, sin siliconas. Desde Panamá (2017) hasta Terres de l'Ebre, Catalunya (2024).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;color:var(--tx);background:var(--crema);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+
+/* ── VARIABLES ── */
+:root{
+  --vp:#143D2C;--vm:#1B8A7A;--vm2:#0E6B5E;
+  --crema:#FAF9F7;--beige:#F0E8D8;
+  --do:#C8A45D;--tc:#B86F52;
+  --tx:#1F2A24;--gr:#6B7B6E;
+  --rad:12px;
+}
+
+/* ── TYPOGRAPHY ── */
+h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',Georgia,serif}
+h1{font-size:clamp(2.4rem,6vw,5rem);line-height:1.1;font-weight:500}
+h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:500;line-height:1.2}
+h3{font-size:1.35rem;font-weight:500}
+p{line-height:1.7;color:var(--gr)}
+.eyebrow{font-family:'Jost',sans-serif;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--do);font-weight:500}
+.section-label{display:block;margin-bottom:.75rem}
+
+/* ── REVEAL ANIMATION ── */
+.rev{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.rev.on{opacity:1;transform:none}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.25rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background .3s,padding .3s}
+.nav.scrolled{background:rgba(250,249,247,.97);backdrop-filter:blur(10px);padding:.85rem 3rem;box-shadow:0 1px 16px rgba(0,0,0,.08)}
+.nav-logo img{height:44px;filter:brightness(0) invert(1);transition:filter .3s}
+.nav.scrolled .nav-logo img{filter:none}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:#fff;transition:color .3s}
+.nav.scrolled .nav-links a{color:var(--vp)}
+.nav-links a:hover{color:var(--do)}
+.nav-cta{background:var(--do);color:#fff!important;padding:.5rem 1.2rem;border-radius:50px;transition:background .2s!important}
+.nav-cta:hover{background:var(--tc)!important;color:#fff!important}
+.nav-burger{display:none;flex-direction:column;gap:5px;width:26px}
+.nav-burger span{display:block;height:2px;background:#fff;border-radius:2px;transition:background .3s}
+.nav.scrolled .nav-burger span{background:var(--vp)}
+
+/* ── HERO ── */
+.hero{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;background:var(--vp)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(20,61,44,.85) 0%,rgba(20,61,44,.45) 30%,rgba(20,61,44,.0) 60%,rgba(20,61,44,.0) 100%)}
+.hero-text{position:absolute;bottom:10vh;left:5rem;z-index:2;max-width:580px;text-align:left}
+.hero-text .eyebrow{color:var(--do);margin-bottom:1rem}
+.hero-text h1{color:#fff;margin-bottom:1.25rem}
+.hero-text p{color:rgba(255,255,255,.82);font-size:1.05rem;margin-bottom:2rem;max-width:480px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85rem 2rem;border-radius:50px;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:all .25s}
+.btn-gold{background:var(--do);color:#fff}
+.btn-gold:hover{background:var(--tc)}
+.btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff}
+.btn-outline:hover{background:rgba(255,255,255,.15)}
+.btn-dark{background:var(--vp);color:#fff}
+.btn-dark:hover{background:var(--vm2)}
+.btn-green{background:var(--vm);color:#fff}
+.btn-green:hover{background:var(--vm2)}
+.btn-wa{background:#25D366;color:#fff}
+.btn-wa:hover{background:#1da851}
+
+/* ── TICKER ── */
+.ticker{background:var(--vp);color:var(--do);padding:.65rem 0;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;animation:ticker 28s linear infinite}
+.ticker-track span{padding:0 3rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── SECTION WRAPPER ── */
+.section{padding:6rem 3rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:3.5rem}
+.section-header h2{margin:.5rem 0 1rem}
+.section-header p{max-width:600px;margin:0 auto;font-size:1rem}
+
+/* ── PRODUCTS ── */
+.products-bg{background:#fff}
+.prod-tabs{display:flex;gap:1rem;justify-content:center;margin-bottom:3rem}
+.tab-btn{padding:.65rem 2rem;border-radius:50px;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;border:2px solid var(--vp);color:var(--vp);transition:all .2s}
+.tab-btn.active,.tab-btn:hover{background:var(--vp);color:#fff}
+.prod-section{display:none}
+.prod-section.active{display:block}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.75rem}
+.prod-card{background:var(--crema);border-radius:var(--rad);overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s;position:relative}
+.prod-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(20,61,44,.13)}
+.prod-card-img{width:100%;height:280px;overflow:hidden;background:var(--beige);position:relative}
+.prod-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.prod-card-img.contain-img img{object-fit:contain;padding:1.5rem}
+.prod-card:hover .prod-card-img img{transform:scale(1.04)}
+.preventa-badge{position:absolute;top:12px;left:12px;background:var(--tc);color:#fff;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .75rem;border-radius:50px;font-weight:600;z-index:2}
+.prod-card-body{padding:1.25rem 1.5rem 1.5rem}
+.prod-card-body h3{font-size:1.1rem;margin-bottom:.4rem;color:var(--tx)}
+.prod-card-body .contiene{font-size:.8rem;color:var(--gr);margin-bottom:.85rem}
+.prod-card-cta{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--vm);font-weight:600;display:flex;align-items:center;gap:.4rem}
+.prod-card-cta::after{content:'→';transition:transform .2s}
+.prod-card:hover .prod-card-cta::after{transform:translateX(4px)}
+
+/* ── CEPILLO CARD ── */
+.cepillo-wrapper{margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--beige)}
+.cepillo-inner{display:flex;gap:3rem;align-items:center;max-width:780px}
+.cepillo-img{width:220px;flex-shrink:0;border-radius:var(--rad);overflow:hidden;background:var(--beige)}
+.cepillo-img img{width:100%;height:220px;object-fit:contain;padding:1.5rem}
+.cepillo-info h3{font-size:1.25rem;margin-bottom:.5rem}
+.cepillo-info p{margin-bottom:1rem;font-size:.92rem}
+.cepillo-badge{display:inline-block;background:var(--beige);color:var(--gr);font-size:.75rem;padding:.3rem .8rem;border-radius:50px;font-weight:500;margin-bottom:1rem}
+
+/* ── PRODUCT MODAL ── */
+.prod-modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;background:rgba(20,61,44,.6);backdrop-filter:blur(4px);padding:1.5rem}
+.prod-modal.open{display:flex}
+.prod-modal-inner{background:#fff;border-radius:16px;width:100%;max-width:640px;max-height:90vh;overflow-y:auto;position:relative}
+.modal-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:var(--beige);font-size:1.2rem;display:flex;align-items:center;justify-content:center;z-index:2;transition:background .2s}
+.modal-close:hover{background:var(--vp);color:#fff}
+.modal-img-wrap{width:100%;height:260px;background:var(--beige);overflow:hidden}
+.modal-img-wrap img{width:100%;height:100%;object-fit:contain;padding:1.5rem}
+.modal-body{padding:2rem}
+.modal-body h2{font-size:1.4rem;margin-bottom:1.25rem;line-height:1.3}
+.modal-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;border-bottom:2px solid var(--beige);padding-bottom:0}
+.mtab-btn{padding:.6rem 1.2rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--gr);border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s}
+.mtab-btn.active{color:var(--vm);border-bottom-color:var(--vm)}
+.mtab-content{display:none;font-size:.95rem;line-height:1.75;color:var(--tx)}
+.mtab-content.active{display:block}
+.inci-text{font-size:.82rem;font-family:'Courier New',monospace;color:var(--gr);background:var(--crema);padding:1rem;border-radius:8px;line-height:1.8}
+
+/* ── INGREDIENTES ── */
+.ingredientes-bg{background:var(--beige)}
+.ing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem}
+.ing-card{background:#fff;border-radius:var(--rad);overflow:hidden;text-align:center;transition:transform .25s,box-shadow .25s}
+.ing-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.09)}
+.ing-card-img{width:100%;height:160px;overflow:hidden}
+.ing-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.ing-card:hover .ing-card-img img{transform:scale(1.06)}
+.ing-card-body{padding:1rem}
+.ing-card-body h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--tx);margin-bottom:.25rem;font-style:italic}
+.ing-card-body .origin{font-size:.75rem;color:var(--do);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+
+/* ── PREVENTA ── */
+.preventa-bg{background:var(--vp)}
+.preventa-bg .section-header h2,.preventa-bg .section-header p,.preventa-bg .section-header .eyebrow{color:#fff}
+.preventa-bg .section-header p{color:rgba(255,255,255,.75)}
+.preventa-bg .section-header .eyebrow{color:var(--do)}
+.preventa-form-wrap{max-width:560px;margin:0 auto;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:2.5rem}
+.form-group{margin-bottom:1.25rem}
+.form-group label{display:block;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:.5rem;font-weight:500}
+.form-group input,.form-group select{width:100%;padding:.85rem 1rem;border:1px solid rgba(255,255,255,.2);border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:.95rem;transition:border .2s}
+.form-group input::placeholder{color:rgba(255,255,255,.4)}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--do)}
+.form-group select option{color:var(--tx);background:#fff}
+.consent-row{display:flex;gap:.75rem;align-items:flex-start;margin-bottom:1.5rem}
+.consent-row input[type=checkbox]{width:18px;height:18px;flex-shrink:0;accent-color:var(--do);margin-top:2px}
+.consent-row label{font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.5}
+.consent-row a{color:var(--do);text-decoration:underline}
+.form-success{display:none;text-align:center;color:#fff;padding:1.5rem 0}
+.form-success p{color:rgba(255,255,255,.8);margin-top:.5rem}
+
+/* ── EMBAJADORAS (rediseño) ── */
+.embajadoras-bg{background:var(--vp)}
+.emb-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:0 auto}
+.emb-left .eyebrow{color:var(--do)}
+.emb-left h2{color:#fff;font-size:clamp(1.9rem,4vw,3rem);margin:.5rem 0 1.25rem;line-height:1.15}
+.emb-left h2 em{color:var(--vm);font-style:italic}
+.emb-left .emb-desc{color:rgba(255,255,255,.75);font-size:.95rem;line-height:1.75;max-width:360px;margin-bottom:2rem}
+.emb-tiers{display:flex;flex-direction:column;gap:.75rem}
+.emb-tier{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;transition:background .2s;text-decoration:none;cursor:pointer}
+.emb-tier:hover{background:rgba(255,255,255,.14)}
+.emb-tier-info h4{color:#fff;font-size:.95rem;font-weight:600;margin-bottom:.2rem}
+.emb-tier-info p{color:rgba(255,255,255,.6);font-size:.8rem}
+.emb-tier-arrow{color:var(--vm);font-size:.82rem;font-weight:600;white-space:nowrap;flex-shrink:0;margin-left:1rem}
+.emb-note{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1rem 1.5rem;margin-top:.75rem}
+.emb-note p{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.7}
+
+/* ── HISTORIA (rediseño Del Caribe al Mediterráneo) ── */
+.historia-bg{background:#fff}
+.historia-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.hist-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:500;line-height:1.15;color:var(--tx);margin-bottom:1.5rem}
+.hist-title em{color:var(--vm)}
+.hist-quote{border-left:3px solid var(--vm);padding-left:1.5rem;margin-bottom:1.75rem}
+.hist-quote p{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-style:italic;color:var(--tx);line-height:1.75}
+.hist-body p{font-size:.9rem;color:var(--gr);line-height:1.75;margin-bottom:.9rem}
+.hist-dates{display:flex;gap:1.25rem;margin-top:2rem}
+.hist-date-card{flex:1;background:var(--beige);border-radius:10px;padding:1rem 1.25rem}
+.hist-date-card .h-year{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;color:var(--vp);line-height:1}
+.hist-date-card .h-label{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gr);font-weight:600;margin-top:.25rem}
+.hist-cards{display:flex;flex-direction:column;gap:.75rem}
+.hist-origin-card{background:var(--beige);border-radius:12px;padding:1.5rem;border-left:4px solid var(--vm)}
+.hist-origin-card .flag{font-size:1.1rem;margin-bottom:.5rem}
+.hist-origin-card h4{font-size:.95rem;font-weight:600;color:var(--tx);margin-bottom:.4rem}
+.hist-origin-card p{font-size:.85rem;color:var(--gr);line-height:1.65}
+.hist-fusion{text-align:center;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vm);font-weight:600;padding:.5rem 0}
+
+/* ── MEDITERRANEAN BANNER ── */
+.med-banner{height:420px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.med-banner-bg{position:absolute;inset:-60px 0;background:url('https://images.unsplash.com/photo-1566864227729-b9a0b5cf2a1d?w=1600&q=80') center/cover no-repeat;will-change:transform}
+.med-banner-overlay{position:absolute;inset:0;background:rgba(20,61,44,.5)}
+.med-banner-text{position:relative;z-index:1;text-align:center;color:#fff;padding:2rem}
+.med-banner-text h2{color:#fff;font-style:italic;margin:.5rem 0 1rem;font-size:clamp(1.8rem,4vw,3rem)}
+.med-banner-text p{color:rgba(255,255,255,.8);max-width:540px;margin:0 auto}
+
+/* ── ENCICLOPEDIA ── */
+.enciclopedia-bg{background:var(--crema)}
+.rizo-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
+.rizo-card{border-radius:var(--rad);overflow:hidden;position:relative;cursor:default}
+.rizo-card img{width:100%;height:280px;object-fit:cover;display:block}
+.rizo-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,61,44,.75) 0%,rgba(20,61,44,0) 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.rizo-card-overlay h3{color:#fff;font-style:italic;margin-bottom:.25rem}
+.rizo-card-overlay p{color:rgba(255,255,255,.8);font-size:.82rem}
+.enc-explainer{background:var(--beige);border-radius:var(--rad);padding:1.25rem 1.5rem;margin-bottom:3rem;display:flex;gap:1rem;align-items:flex-start}
+.enc-explainer span{font-size:1.5rem;flex-shrink:0}
+.enc-explainer p{font-size:.88rem;color:var(--tx)}
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem}
+.article-card{background:#fff;border-radius:var(--rad);padding:1.5rem;transition:transform .25s,box-shadow .25s;cursor:pointer}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.article-num{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--do);font-weight:600;margin-bottom:.5rem}
+.article-card h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--tx);line-height:1.35;margin-bottom:.5rem;font-style:italic}
+.article-card .art-arrow{font-size:.78rem;color:var(--vm);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+/* ── TALLERES ── */
+.talleres-bg{background:var(--vp)}
+.talleres-bg .section-header h2,.talleres-bg .section-header .eyebrow{color:#fff}
+.talleres-bg .section-header p{color:rgba(255,255,255,.7)}
+.talleres-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;margin-bottom:2.5rem}
+.taller-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--rad);padding:1.75rem 1.5rem;text-align:center;transition:background .25s}
+.taller-card:hover{background:rgba(255,255,255,.14)}
+.taller-icon{font-size:2rem;margin-bottom.75rem:}
+.taller-card h4{color:#fff;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.15rem;margin-bottom:.5rem}
+.taller-card p{color:rgba(255,255,255,.6);font-size:.83rem}
+.talleres-cta{text-align:center}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--do);padding:3rem}
+.cta-band-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;max-width:1100px;margin:0 auto}
+.cta-band h2{color:#fff;font-size:clamp(1.4rem,3vw,2.2rem)}
+.cta-band p{color:rgba(255,255,255,.8);margin-top:.4rem;font-size:.95rem}
+.btn-white{background:#fff;color:var(--do)}
+.btn-white:hover{background:var(--crema)}
+
+/* ── FOOTER ── */
+footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto 3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand img{height:42px;filter:brightness(0) invert(1);margin-bottom:1rem}
+.footer-brand p{font-size:.85rem;line-height:1.7;max-width:260px}
+.footer-col h5{color:#fff;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+.footer-col a{display:block;font-size:.85rem;margin-bottom:.5rem;transition:color .2s}
+.footer-col a:hover{color:var(--do)}
+.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:.78rem}
+.footer-bottom .legal-links{display:flex;gap:1.5rem}
+.footer-bottom .legal-links a{font-size:.78rem;transition:color .2s}
+.footer-bottom .legal-links a:hover{color:var(--do)}
+.social-links{display:flex;gap:.75rem;margin-top:1rem}
+.social-links a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2);transition:all .2s}
+.social-links a:hover{border-color:var(--do);color:var(--do)}
+
+/* ── LEGAL MODALS ── */
+.legal-modal{position:fixed;inset:0;z-index:600;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);padding:1.5rem}
+.legal-modal.open{display:flex}
+.legal-modal-inner{background:#fff;border-radius:16px;width:100%;max-width:640px;max-height:85vh;overflow-y:auto;padding:2.5rem;position:relative}
+.legal-modal h3{margin-bottom:1.25rem;color:var(--tx)}
+.legal-modal p,.legal-modal li{font-size:.88rem;color:var(--gr);line-height:1.7;margin-bottom:.75rem}
+.legal-modal ul{padding-left:1.25rem}
+.legal-modal .lm-close{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:50%;background:var(--beige);font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+.legal-modal .lm-close:hover{background:var(--vp);color:#fff}
+
+/* ── COOKIE BANNER ── */
+.cookie-banner{position:fixed;bottom:1.5rem;left:1.5rem;right:1.5rem;z-index:400;background:var(--tx);color:#fff;border-radius:12px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 8px 32px rgba(0,0,0,.25)}
+.cookie-banner p{font-size:.83rem;flex:1;min-width:200px;line-height:1.6}
+.cookie-banner p a{color:var(--do);text-decoration:underline}
+.cookie-actions{display:flex;gap:.75rem;flex-shrink:0}
+.btn-cookie-accept{background:var(--do);color:#fff;padding:.5rem 1.25rem;border-radius:50px;font-size:.8rem;font-weight:600}
+.btn-cookie-reject{background:transparent;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);padding:.5rem 1.25rem;border-radius:50px;font-size:.8rem}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .nav{padding:1rem 1.5rem}
+  .nav.scrolled{padding:.75rem 1.5rem}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .hero-text{left:1.5rem;bottom:8vh;max-width:calc(100% - 3rem)}
+  h1{font-size:2.4rem}
+  .historia-inner{grid-template-columns:1fr}
+  .hist-cards{order:-1}
+  .emb-inner{grid-template-columns:1fr}
+  .rizo-cards{grid-template-columns:1fr}
+  .rizo-card img{height:220px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .cta-band-inner{flex-direction:column;text-align:center}
+  .cepillo-inner{flex-direction:column;align-items:flex-start}
+  .cepillo-img{width:100%;max-width:220px}
+  .section{padding:4rem 1.5rem}
+}
+/* ── ARTICLE MODAL ── */
+.art-modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;background:rgba(20,61,44,.6);backdrop-filter:blur(4px);padding:1.5rem}
+.art-modal.open{display:flex}
+.art-modal-inner{background:#fff;border-radius:16px;width:100%;max-width:720px;max-height:88vh;overflow-y:auto;position:relative}
+.art-modal-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:var(--beige);font-size:1.2rem;display:flex;align-items:center;justify-content:center;z-index:2;transition:background .2s}
+.art-modal-close:hover{background:var(--vp);color:#fff}
+.art-modal-hero{background:var(--beige);padding:2.5rem 2.5rem 1.5rem;border-radius:16px 16px 0 0}
+.art-modal-hero .art-num{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--do);font-weight:600;margin-bottom:.5rem}
+.art-modal-hero h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--tx);font-weight:500;line-height:1.3}
+.art-modal-body{padding:2rem 2.5rem 2.5rem}
+.art-modal-body h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--tx);margin:1.5rem 0 .5rem;font-style:italic}
+.art-modal-body p{font-size:.93rem;color:var(--gr);margin-bottom:.75rem;line-height:1.75}
+.art-modal-body ul{padding-left:1.25rem;margin-bottom:1rem}
+.art-modal-body li{font-size:.9rem;color:var(--gr);margin-bottom:.4rem;line-height:1.65}
+.art-modal-body strong{color:var(--tx)}
+.art-cta-box{margin-top:2rem;padding:1.25rem 1.5rem;background:var(--beige);border-radius:10px;text-align:center}
+.art-cta-box p{font-size:.88rem;margin-bottom:.75rem;color:var(--tx)}
+.article-card{cursor:pointer}
+@media(max-width:600px){
+  .art-modal{align-items:flex-end;padding:0}
+  .art-modal-inner{border-radius:16px 16px 0 0;max-height:92vh}
+  .art-modal-hero,.art-modal-body{padding-left:1.5rem;padding-right:1.5rem}
+}
+@media(max-width:600px){
+  .prod-modal-inner{border-radius:12px 12px 0 0;max-height:95vh;position:fixed;bottom:0;left:0;right:0;width:100%;max-width:100%}
+  .prod-modal{align-items:flex-end;padding:0}
+  .footer-grid{grid-template-columns:1fr}
+  .emb-grid{grid-template-columns:1fr}
+  .talleres-grid{grid-template-columns:1fr 1fr}
+  .rizo-cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+<nav class="nav" id="main-nav" aria-label="Navegación principal">
+  <a class="nav-logo" href="#inicio" aria-label="Danais Natural Cosmetics">
+    <img src="assets/danais-logo-sin-fondo.png" alt="Danais Natural Cosmetics" height="44">
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#ingredientes">Ingredientes</a>
+    <a href="#enciclopedia">Enciclopedia</a>
+    <a href="#talleres">Talleres</a>
+    <a href="diagnostico.html">Diagnóstico</a>
+    <a href="#embajadoras">Embajadoras</a>
+    <a href="#preventa" class="nav-cta">Reservar</a>
+  </div>
+  <button class="nav-burger" aria-label="Menú" id="nav-burger">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="hero" id="inicio" aria-label="Bienvenida">
+  <video autoplay loop muted playsinline aria-hidden="true">
+    <source src="assets/hero-danais.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-text rev">
+    <span class="eyebrow section-label">Terres de l'Ebre · Catalunya · Cosmética Botánica</span>
+    <h1>Rizos que<br><em>respiran libre</em></h1>
+    <p>Fórmulas botánicas artesanales. Sin sulfatos, sin siliconas, sin compromiso. Para el rizo que eres.</p>
+    <div class="hero-btns">
+      <a href="#productos" class="btn btn-gold">Ver productos</a>
+      <a href="diagnostico.html" class="btn btn-outline">Diagnóstico capilar gratis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ TICKER ═══════════════════════════════ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Sin Sulfatos</span><span>✦</span>
+    <span>Sin Siliconas</span><span>✦</span>
+    <span>Mucina de Nopal</span><span>✦</span>
+    <span>Aceite de Burití</span><span>✦</span>
+    <span>Cosmética Artesanal</span><span>✦</span>
+    <span>Método CGM Friendly</span><span>✦</span>
+    <span>Hecho en Catalunya</span><span>✦</span>
+    <span>Desde Panamá 2017</span><span>✦</span>
+    <span>Sin Sulfatos</span><span>✦</span>
+    <span>Sin Siliconas</span><span>✦</span>
+    <span>Mucina de Nopal</span><span>✦</span>
+    <span>Aceite de Burití</span><span>✦</span>
+    <span>Cosmética Artesanal</span><span>✦</span>
+    <span>Método CGM Friendly</span><span>✦</span>
+    <span>Hecho en Catalunya</span><span>✦</span>
+    <span>Desde Panamá 2017</span><span>✦</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PRODUCTOS ═══════════════════════════════ -->
+<section class="section products-bg" id="productos">
+  <div class="section-inner">
+    <div class="section-header rev">
+      <span class="eyebrow section-label">Línea Equilibrante</span>
+      <h2>Nuestra colección</h2>
+      <p>Fórmulas para cada paso de tu rutina. Con activos botánicos de origen rastreable, sin ingredientes que pesen el rizo.</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="prod-tabs rev">
+      <button class="tab-btn active" data-target="kits-section">Kits</button>
+      <button class="tab-btn" data-target="individuales-section">Productos individuales</button>
+    </div>
+
+    <!-- KITS -->
+    <div class="prod-section active" id="kits-section">
+      <div class="prod-grid">
+        <!-- Kit de Lavado -->
+        <div class="prod-card" data-product="kit-lavado" role="button" tabindex="0" aria-label="Ver Kit de Lavado">
+          <div class="prod-card-img">
+            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <img src="assets/Kit-Shampoo-y-Acondicionador-Solido-editado.jpg" alt="Kit de Lavado — Shampoo y Acondicionador Sólido">
+          </div>
+          <div class="prod-card-body">
+            <h3>Kit de Lavado</h3>
+            <p class="contiene">Shampoo Sólido Equilibrante + Acondicionador Sólido Desenredante</p>
+            <span class="prod-card-cta">Ver detalles</span>
+          </div>
+        </div>
+        <!-- Kit de Definición -->
+        <div class="prod-card" data-product="kit-definicion" role="button" tabindex="0" aria-label="Ver Kit de Definición">
+          <div class="prod-card-img contain-img" style="background:var(--crema)">
+            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <img src="assets/Kit-definicion-de-rizos-.jpg" alt="Kit de Definición de Rizos">
+          </div>
+          <div class="prod-card-body">
+            <h3>Kit de Definición</h3>
+            <p class="contiene">Crema de Peinar Vegetal + Gel Definidora Vegetal + Óleo Multiuso</p>
+            <span class="prod-card-cta">Ver detalles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDIVIDUALES -->
+    <div class="prod-section" id="individuales-section">
+      <div class="prod-grid">
+        <div class="prod-card" data-product="shampoo" role="button" tabindex="0">
+          <div class="prod-card-img">
+            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <img src="assets/shampoo-solido-editado.jpg" alt="Shampoo Sólido Equilibrante">
+          </div>
+          <div class="prod-card-body">
+            <h3>Shampoo Sólido Equilibrante</h3>
+            <p class="contiene">Sin sulfatos · Mucina de Nopal · Shikakai</p>
+            <span class="prod-card-cta">Ver detalles</span>
+          </div>
+        </div>
+        <div class="prod-card" data-product="acondicionador" role="button" tabindex="0">
+          <div class="prod-card-img">
+            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <img src="assets/Acondicionador-solido-editado.jpg" alt="Acondicionador Sólido Desenredante">
+          </div>
+          <div class="prod-card-body">
+            <h3>Acondicionador Sólido Desenredante</h3>
+            <p class="contiene">Sin siliconas · Activos ayurvédicos · Karité</p>
+            <span class="prod-card-cta">Ver detalles</span>
+          </div>
+        </div>
+        <div class="prod-card" data-product="crema" role="button" tabindex="0">
+          <div class="prod-card-img">
+            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <img src="assets/crema-de-peinar-ediada.jpg" alt="Crema de Peinar Vegetal">
+          </div>
+          <div class="prod-card-body">
+            <h3>Crema de Peinar Vegetal</h3>
+            <p class="contiene">Linaza · Mucina de Nopal · Burití</p>
+            <span class="prod-card-cta">Ver detalles</span>
+          </div>
+        </div>
+        <div class="prod-card" data-product="gel" role="button" tabindex="0">
+          <div class="prod-card-img">
+            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <img src="assets/Gel-Definidora-con-Buriti.jpg" alt="Gel Definidora Vegetal">
+          </div>
+          <div class="prod-card-body">
+            <h3>Gel Definidora Vegetal</h3>
+            <p class="contiene">Linaza · Nopal · Burití · Fijación sin residuos</p>
+            <span class="prod-card-cta">Ver detalles</span>
+          </div>
+        </div>
+        <div class="prod-card" data-product="oleo" role="button" tabindex="0">
+          <div class="prod-card-img">
+            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <img src="assets/Oleo-Multiuso-Editado.jpg" alt="Óleo Multiuso">
+          </div>
+          <div class="prod-card-body">
+            <h3>Óleo Multiuso</h3>
+            <p class="contiene">Pre-lavado · Rompe Cast · Sérum de acabado</p>
+            <span class="prod-card-cta">Ver detalles</span>
+          </div>
+        </div>
+        <div class="prod-card" data-product="cobrizo" role="button" tabindex="0">
+          <div class="prod-card-img">
+            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <img src="assets/Coloracion-Vegetal-editada.jpg" alt="Cobrizo Tierra — Baño de Color">
+          </div>
+          <div class="prod-card-body">
+            <h3>Cobrizo Tierra</h3>
+            <p class="contiene">Baño de Color y Tratamiento Reparador · Henna · Neem</p>
+            <span class="prod-card-cta">Ver detalles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CEPILLO (siempre visible) -->
+    <div class="cepillo-wrapper rev">
+      <div class="cepillo-inner">
+        <div class="cepillo-img">
+          <img src="assets/Cepillo-bounce-curl.jpg" alt="Cepillo Bounce Curl">
+        </div>
+        <div class="cepillo-info">
+          <span class="eyebrow section-label">Accesorio</span>
+          <h3>Cepillo Bounce Curl</h3>
+          <span class="cepillo-badge">Accesorio complementario</span>
+          <p>El favorito de las rizadas para distribuir productos con efecto diffusing sin romper el patrón. Diseñado para rizos 2A–4C.</p>
+          <a href="https://wa.me/34624702715?text=Hola%2C%20me%20interesa%20el%20Cepillo%20Bounce%20Curl.%20%C2%BFTen%C3%A9is%20disponibilidad%3F" target="_blank" rel="noopener" class="btn btn-dark" style="display:inline-block;margin-top:.5rem">Consultar disponibilidad</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ PRODUCT MODAL ═══════════════════════════════ -->
+<div class="prod-modal" id="prod-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="prod-modal-inner">
+    <button class="modal-close" id="modal-close" aria-label="Cerrar">×</button>
+    <div class="modal-img-wrap">
+      <img id="modal-img" src="" alt="">
+    </div>
+    <div class="modal-body">
+      <h2 id="modal-title" class="serif"></h2>
+      <div class="modal-tabs" role="tablist">
+        <button class="mtab-btn active" data-tab="claim" role="tab" aria-selected="true">Claim</button>
+        <button class="mtab-btn" data-tab="uso" role="tab" aria-selected="false">Modo de Uso</button>
+        <button class="mtab-btn" data-tab="inci" role="tab" aria-selected="false">INCI</button>
+      </div>
+      <div class="mtab-content active" id="modal-claim" role="tabpanel"></div>
+      <div class="mtab-content" id="modal-uso" role="tabpanel"></div>
+      <div class="mtab-content" id="modal-inci" role="tabpanel"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ INGREDIENTES ═══════════════════════════════ -->
+<section class="section ingredientes-bg" id="ingredientes">
+  <div class="section-inner">
+    <div class="section-header rev">
+      <span class="eyebrow section-label">Botánica de origen</span>
+      <h2>Nuestros ingredientes</h2>
+      <p>Cada fórmula empieza en la planta. Activos de origen rastreable seleccionados por su eficacia probada en el cabello rizado.</p>
+    </div>
+    <div class="ing-grid">
+      <div class="ing-card rev">
+        <div class="ing-card-img"><img src="assets/ing-01-nopal.jpg" alt="Mucina de Nopal"></div>
+        <div class="ing-card-body"><h4>Mucina de Nopal</h4><span class="origin">México · Panamá</span></div>
+      </div>
+      <div class="ing-card rev">
+        <div class="ing-card-img"><img src="assets/ing-02-buriti.jpg" alt="Aceite de Burití"></div>
+        <div class="ing-card-body"><h4>Aceite de Burití</h4><span class="origin">Amazonia</span></div>
+      </div>
+      <div class="ing-card rev">
+        <div class="ing-card-img"><img src="assets/ing-03-oliva.jpg" alt="Aceite de Oliva Virgen"></div>
+        <div class="ing-card-body"><h4>Aceite de Oliva Virgen</h4><span class="origin">Mediterráneo</span></div>
+      </div>
+      <div class="ing-card rev">
+        <div class="ing-card-img"><img src="assets/ing-04-shikakai.jpg" alt="Shikakai"></div>
+        <div class="ing-card-body"><h4>Shikakai</h4><span class="origin">India · Ayurveda</span></div>
+      </div>
+      <div class="ing-card rev">
+        <div class="ing-card-img"><img src="assets/ing-05-karite-babasu-almendras.jpg" alt="Karité, Babasú y Almendras"></div>
+        <div class="ing-card-body"><h4>Karité, Babasú y Almendras</h4><span class="origin">África · Amazonia</span></div>
+      </div>
+      <div class="ing-card rev">
+        <div class="ing-card-img"><img src="assets/ing-06-romero-calendula.jpg" alt="Romero y Caléndula"></div>
+        <div class="ing-card-body"><h4>Romero y Caléndula</h4><span class="origin">Mediterráneo</span></div>
+      </div>
+      <div class="ing-card rev">
+        <div class="ing-card-img"><img src="assets/ing-07-romero-calendula-ricino.jpg" alt="Romero, Caléndula y Ricino"></div>
+        <div class="ing-card-body"><h4>Romero, Caléndula y Ricino</h4><span class="origin">Mediterráneo</span></div>
+      </div>
+      <div class="ing-card rev">
+        <div class="ing-card-img"><img src="assets/ing-08-linaza.jpg" alt="Linaza"></div>
+        <div class="ing-card-body"><h4>Linaza</h4><span class="origin">Europa · América</span></div>
+      </div>
+      <div class="ing-card rev">
+        <div class="ing-card-img"><img src="assets/ing-09-neem.jpg" alt="Neem"></div>
+        <div class="ing-card-body"><h4>Neem</h4><span class="origin">India · Trópicos</span></div>
+      </div>
+      <div class="ing-card rev">
+        <div class="ing-card-img"><img src="assets/ing-10-henna.jpg" alt="Henna"></div>
+        <div class="ing-card-body"><h4>Henna</h4><span class="origin">Oriente Medio · N. África</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ PREVENTA ═══════════════════════════════ -->
+<section class="section preventa-bg" id="preventa">
+  <div class="section-inner">
+    <div class="section-header rev">
+      <span class="eyebrow section-label">Lanzamiento España · Septiembre 2026</span>
+      <h2>Reserva ahora con descuento especial</h2>
+      <p>Sé de las primeras en tener acceso. Sin cargo ahora — te avisamos cuando esté listo.</p>
+    </div>
+    <div class="preventa-form-wrap rev">
+      <form id="preventa-form" novalidate>
+        <div class="form-group">
+          <label for="prev-nombre">Nombre</label>
+          <input type="text" id="prev-nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="prev-email">Correo electrónico</label>
+          <input type="email" id="prev-email" name="email" placeholder="tu@correo.com" required>
+        </div>
+        <div class="form-group">
+          <label for="prev-producto">Producto de interés</label>
+          <select id="prev-producto" name="producto">
+            <option value="">— Elige un producto o kit —</option>
+            <option>Kit de Lavado</option>
+            <option>Kit de Definición</option>
+            <option>Shampoo Sólido Equilibrante</option>
+            <option>Acondicionador Sólido Desenredante</option>
+            <option>Crema de Peinar Vegetal</option>
+            <option>Gel Definidora Vegetal</option>
+            <option>Óleo Multiuso</option>
+            <option>Cobrizo Tierra</option>
+            <option>Varios / toda la línea</option>
+          </select>
+        </div>
+        <div class="consent-row">
+          <input type="checkbox" id="rgpd" name="rgpd" required>
+          <label for="rgpd">Acepto que Danais Natural Cosmetics trate mis datos para informarme sobre el lanzamiento y enviarme comunicaciones relacionadas, de acuerdo con la <a href="#" onclick="openLegal('privacidad');return false">Política de Privacidad</a>. Puedo revocar este consentimiento en cualquier momento.</label>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Reservar mi plaza</button>
+      </form>
+      <div class="form-success" id="form-success">
+        <div style="font-size:2.5rem">✓</div>
+        <h3 style="color:#fff;margin:.5rem 0">¡Reserva confirmada!</h3>
+        <p>Te escribiremos en cuanto el lanzamiento esté listo. Gracias por confiar en Danais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ EMBAJADORAS ═══════════════════════════════ -->
+<section class="section embajadoras-bg" id="embajadoras">
+  <div class="section-inner">
+    <div class="emb-inner">
+      <!-- LEFT -->
+      <div class="emb-left rev">
+        <span class="eyebrow section-label" style="color:var(--do)">PROGRAMA DE EMBAJADORAS</span>
+        <h2>Vende lo que <em>amas</em>.<br>Gana de verdad.</h2>
+        <p class="emb-desc">Sé parte de la red de embajadoras Danais. Sin stock a consignación, sin inversión imposible — solo productos que funcionan, clientas que repiten y una comunidad que te respalda.</p>
+        <form id="embajadora-form" novalidate style="display:flex;flex-direction:column;gap:.8rem;margin-top:1rem;width:100%;max-width:420px">
+          <div class="form-group">
+            <label for="emb-nombre">Nombre</label>
+            <input type="text" id="emb-nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="emb-telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="emb-telefono" name="telefono" placeholder="+34 600 000 000" required>
+          </div>
+          <div class="form-group">
+            <label for="emb-ciudad">Ciudad / Zona</label>
+            <input type="text" id="emb-ciudad" name="ciudad" placeholder="¿Dónde venderías?">
+          </div>
+          <div class="consent-row">
+            <input type="checkbox" id="emb-rgpd" name="rgpd" required>
+            <label for="emb-rgpd">Acepto que Danais Natural Cosmetics trate mis datos para gestionar mi solicitud como embajadora, de acuerdo con la <a href="#" onclick="openLegal('privacidad');return false">Política de Privacidad</a>.</label>
+          </div>
+          <button type="submit" class="btn btn-gold" style="align-self:flex-start">Quiero ser embajadora →</button>
+        </form>
+      </div>
+      <!-- RIGHT -->
+      <div class="emb-tiers rev">
+        <div class="emb-tier">
+          <div class="emb-tier-info">
+            <h4>🌿 Inscripción anual · 100 €</h4>
+            <p>Una sola cuota al año. Incluye kit de bienvenida, fichas de uso y formación directa con Mariela.</p>
+          </div>
+          <span class="emb-tier-arrow">Únete</span>
+        </div>
+        <div class="emb-tier">
+          <div class="emb-tier-info">
+            <h4>💚 30% de descuento en productos</h4>
+            <p>En toda la línea Danais, todo el año. Tu margen al vender, o tu ahorro al usarlos tú.</p>
+          </div>
+          <span class="emb-tier-arrow">Gana</span>
+        </div>
+        <div class="emb-tier">
+          <div class="emb-tier-info">
+            <h4>✨ 20% de comisión en talleres</h4>
+            <p>Por cada taller que organices o llenes con tus clientas, te llevas el 20% de la recaudación.</p>
+          </div>
+          <span class="emb-tier-arrow">Crece</span>
+        </div>
+        <div class="emb-note">
+          <p>Sin stock a consignación · Sin permanencia más allá del año · Orientación directa con Mariela</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ HISTORIA ═══════════════════════════════ -->
+<section class="section historia-bg" id="historia">
+  <div class="section-inner">
+    <div class="historia-inner">
+      <!-- LEFT: texto -->
+      <div class="rev">
+        <span class="eyebrow section-label">Nuestra historia</span>
+        <h2 class="hist-title">Del Caribe<br>al <em>Mediterráneo</em></h2>
+        <div class="hist-quote">
+          <p>«Empecé a formular porque no encontraba nada que respetara mi rizo. Hoy, esas mismas fórmulas viajan contigo, donde estés.»</p>
+          <p style="font-size:.85rem;color:var(--gr);font-style:normal;margin-top:.5rem">— Mariela Andrade, fundadora</p>
+        </div>
+        <div class="hist-body">
+          <p>Danais nació en 2017 en Ciudad de Panamá con ingredientes de la región: linaza, coco, mango, menta, karité y burití. Una cosmética artesanal pensada para los rizos tropicales, con fórmulas que respetan el cabello y honran la biodiversidad local.</p>
+          <p>En 2024 las fórmulas cruzan el Atlántico. Producción desde el <strong>Obrador de Acate en Deltebre</strong>. Talleres y formaciones en <strong>Mont-roig del Camp, Tarragona</strong>. Los activos del Caribe se fusionan con nopal, romero, caléndula y oliva virgen del Mediterráneo. La esencia botánica, intacta.</p>
+        </div>
+        <div class="hist-dates">
+          <div class="hist-date-card">
+            <div class="h-year">2017</div>
+            <div class="h-label">Fundación · Panamá</div>
+          </div>
+          <div class="hist-date-card">
+            <div class="h-year">2024</div>
+            <div class="h-label">Expansión · España</div>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT: cards de origen -->
+      <div class="hist-cards rev">
+        <div class="hist-origin-card">
+          <div class="flag">🌴 Caribe · Panamá</div>
+          <h4>Activos de origen</h4>
+          <p>Linaza · Coco · Mango · Menta · Karité · Burití</p>
+        </div>
+        <div class="hist-fusion">⟷ &nbsp; FUSIÓN BOTÁNICA &nbsp; ⟷</div>
+        <div class="hist-origin-card">
+          <div class="flag">🫒 Mediterráneo · Catalunya</div>
+          <h4>Activos de adopción</h4>
+          <p>Nopal · Romero · Caléndula · Oliva virgen</p>
+          <p style="font-size:.78rem;color:var(--vm);margin-top:.6rem;font-weight:500">Obrador de Acate · Deltebre<br>Talleres · Mont-roig del Camp, Tarragona</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ MED BANNER ═══════════════════════════════ -->
+<div class="med-banner">
+  <div class="med-banner-bg" id="med-banner-bg"></div>
+  <div class="med-banner-overlay"></div>
+  <div class="med-banner-text rev">
+    <span class="eyebrow">Terres de l'Ebre · Catalunya</span>
+    <h2>Del Mediterráneo<br>a tu rizo</h2>
+    <p>Elaborado de forma artesanal en el sur de Tarragona, con activos botánicos de trazabilidad verificada.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ ENCICLOPEDIA DEL RIZO ═══════════════════════════════ -->
+<section class="section enciclopedia-bg" id="enciclopedia">
+  <div class="section-inner">
+    <div class="section-header rev">
+      <span class="eyebrow section-label">Conocimiento libre</span>
+      <h2>Enciclopedia Danais<br><em>del Cabello Rizado</em></h2>
+      <p>Nueve años de educación capilar, ahora a tu alcance.</p>
+    </div>
+
+    <!-- Tipos de rizo -->
+    <div class="rizo-cards rev">
+      <div class="rizo-card">
+        <img src="assets/Rizo-tipo-2.jpg" alt="Cabello Ondulado — Tipo 2">
+        <div class="rizo-card-overlay">
+          <h3>Tipo 2 — Ondulado</h3>
+          <p>Onda suave con patrones 2A, 2B y 2C</p>
+        </div>
+      </div>
+      <div class="rizo-card">
+        <img src="assets/Rizo-tipo-3.jpg" alt="Cabello Rizado — Tipo 3">
+        <div class="rizo-card-overlay">
+          <h3>Tipo 3 — Rizado</h3>
+          <p>Rizo definido con patrones 3A, 3B y 3C</p>
+        </div>
+      </div>
+      <div class="rizo-card">
+        <img src="assets/Rizo-tipo-4.jpg" alt="Cabello Afro — Tipo 4">
+        <div class="rizo-card-overlay">
+          <h3>Tipo 4 — Muy Rizado</h3>
+          <p>Cabello afro con patrones 4A, 4B y 4C</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explainer -->
+    <div class="enc-explainer rev">
+      <span>💡</span>
+      <p><strong>¿Cómo leer tu tipo de rizo?</strong> El número indica la forma (2 = onda, 3 = rizo, 4 = muy rizado); la letra indica qué tan cerrado es el patrón (A es el más abierto, C el más cerrado). Es muy común tener varios tipos a la vez en distintas zonas del cabello.</p>
+    </div>
+
+    <!-- 10 artículos -->
+    <div class="article-grid">
+      <div class="article-card rev" data-article="1" role="button" tabindex="0">
+        <p class="article-num">01</p>
+        <h4>Qué tipo de rizo tengo: guía rápida para empezar</h4>
+        <span class="art-arrow">Leer →</span>
+      </div>
+      <div class="article-card rev" data-article="2" role="button" tabindex="0">
+        <p class="article-num">02</p>
+        <h4>Qué es la porosidad y por qué cambia tu rutina</h4>
+        <span class="art-arrow">Leer →</span>
+      </div>
+      <div class="article-card rev" data-article="3" role="button" tabindex="0">
+        <p class="article-num">03</p>
+        <h4>Por qué aparece el frizz y cómo ayudar a controlarlo</h4>
+        <span class="art-arrow">Leer →</span>
+      </div>
+      <div class="article-card rev" data-article="4" role="button" tabindex="0">
+        <p class="article-num">04</p>
+        <h4>Cuánta crema y gel usar según tu cabello</h4>
+        <span class="art-arrow">Leer →</span>
+      </div>
+      <div class="article-card rev" data-article="5" role="button" tabindex="0">
+        <p class="article-num">05</p>
+        <h4>Cómo definir rizos con cepillo paso a paso</h4>
+        <span class="art-arrow">Leer →</span>
+      </div>
+      <div class="article-card rev" data-article="6" role="button" tabindex="0">
+        <p class="article-num">06</p>
+        <h4>Refresh día 2 y día 3: cómo revivir tus rizos sin lavar</h4>
+        <span class="art-arrow">Leer →</span>
+      </div>
+      <div class="article-card rev" data-article="7" role="button" tabindex="0">
+        <p class="article-num">07</p>
+        <h4>Historia del rizo: de África a Panamá</h4>
+        <span class="art-arrow">Leer →</span>
+      </div>
+      <div class="article-card rev" data-article="8" role="button" tabindex="0">
+        <p class="article-num">08</p>
+        <h4>Herramientas esenciales: cepillo, difusor y microfibra</h4>
+        <span class="art-arrow">Leer →</span>
+      </div>
+      <div class="article-card rev" data-article="9" role="button" tabindex="0">
+        <p class="article-num">09</p>
+        <h4>Cómo dormir con rizos</h4>
+        <span class="art-arrow">Leer →</span>
+      </div>
+      <div class="article-card rev" data-article="10" role="button" tabindex="0">
+        <p class="article-num">10</p>
+        <h4>Rutinas personalizadas por tipo de cabello</h4>
+        <span class="art-arrow">Leer →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ TALLERES ═══════════════════════════════ -->
+<section class="section talleres-bg" id="talleres">
+  <div class="section-inner">
+    <div class="section-header rev">
+      <span class="eyebrow section-label">Formación práctica</span>
+      <h2 style="color:#fff">Talleres Danais</h2>
+      <p>Aprende a crear tus propios productos botánicos. Grupos reducidos, materia prima profesional, metodología artesanal.</p>
+    </div>
+    <div class="talleres-grid">
+      <div class="taller-card rev">
+        <div class="taller-icon" style="font-size:2rem;margin-bottom:.75rem">🌿</div>
+        <h4>Maceraciones</h4>
+        <p>Extrae los principios activos de plantas medicinales en aceite o alcohol. La base de toda cosmética botánica.</p>
+      </div>
+      <div class="taller-card rev">
+        <div class="taller-icon" style="font-size:2rem;margin-bottom:.75rem">🧼</div>
+        <h4>Shampoo Sólido</h4>
+        <p>Formula y moldea tu propio shampoo sólido sin sulfatos adaptado a tu tipo de cabello.</p>
+      </div>
+      <div class="taller-card rev">
+        <div class="taller-icon" style="font-size:2rem;margin-bottom:.75rem">🫙</div>
+        <h4>Ungüentos y Bálsamos</h4>
+        <p>Elabora bálsamos labiales, ungüentos de hierbas y pomadas reparadoras con ceras naturales y aceites vegetales.</p>
+      </div>
+      <div class="taller-card rev">
+        <div class="taller-icon" style="font-size:2rem;margin-bottom:.75rem">🥛</div>
+        <h4>Leche Corporal</h4>
+        <p>Aprende la emulsificación O/W para crear lociones corporales ligeras y nutritivas con activos botánicos.</p>
+      </div>
+      <div class="taller-card rev">
+        <div class="taller-icon" style="font-size:2rem;margin-bottom:.75rem">🌀</div>
+        <h4>Cuidado de los Rizos</h4>
+        <p>Taller completo de rutina CGM: identifica tu tipo de rizo, elige productos y aprende las técnicas de definición.</p>
+      </div>
+    </div>
+    <div class="talleres-cta rev">
+      <a href="https://wa.me/34624702715?text=Hola%2C%20me%20interesan%20los%20talleres%20Danais.%20%C2%BFPod%C3%A9is%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" target="_blank" rel="noopener" class="btn btn-gold">Consultar fechas y disponibilidad</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ CTA BAND ═══════════════════════════════ -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2>¿Tienes preguntas sobre tu rizo?</h2>
+      <p>Escríbenos directamente. Respondemos en menos de 24 horas.</p>
+    </div>
+    <a href="https://wa.me/34624702715?text=Hola%20Danais%2C%20tengo%20una%20pregunta%20sobre%20mi%20cabello." target="_blank" rel="noopener" class="btn btn-white">Escríbenos por WhatsApp</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/danais-logo-sin-fondo.png" alt="Danais Natural Cosmetics">
+      <p>Cosmética botánica artesanal para cabello rizado. Sin sulfatos, sin siliconas, con amor y ciencia vegetal.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/danaisnatural" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/danaisnatural" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Productos</h5>
+      <a href="#productos">Kit de Lavado</a>
+      <a href="#productos">Kit de Definición</a>
+      <a href="#productos">Shampoo Sólido</a>
+      <a href="#productos">Acondicionador Sólido</a>
+      <a href="#productos">Óleo Multiuso</a>
+    </div>
+    <div class="footer-col">
+      <h5>Enciclopedia</h5>
+      <a href="/enciclopedia-del-rizo">Tipos de rizo</a>
+      <a href="/enciclopedia-del-rizo">Porosidad</a>
+      <a href="/enciclopedia-del-rizo">Técnicas CGM</a>
+      <a href="/enciclopedia-del-rizo">Rutinas</a>
+    </div>
+    <div class="footer-col">
+      <h5>Danais</h5>
+      <a href="#historia">Nuestra historia</a>
+      <a href="#talleres">Talleres</a>
+      <a href="https://pa.danaisnatural.com" target="_blank" rel="noopener">Danais Panamá</a>
+      <a href="https://wa.me/34624702715" target="_blank" rel="noopener">Contacto WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2017 Danais Natural Cosmetics. Todos los derechos reservados.</p>
+    <div class="legal-links">
+      <a href="#" onclick="openLegal('aviso');return false">Aviso Legal</a>
+      <a href="#" onclick="openLegal('privacidad');return false">Privacidad</a>
+      <a href="#" onclick="openLegal('cookies');return false">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════ LEGAL MODALS ═══════════════════════════════ -->
+<div class="legal-modal" id="lm-aviso" role="dialog" aria-modal="true" aria-labelledby="lm-aviso-title">
+  <div class="legal-modal-inner">
+    <button class="lm-close" onclick="closeLegal('aviso')" aria-label="Cerrar">×</button>
+    <h3 id="lm-aviso-title">Aviso Legal</h3>
+    <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se identifican los siguientes datos del titular del sitio web:</p>
+    <ul>
+      <li><strong>Denominación Social / Titular:</strong> ANDRADE APARICIO DE VIDAL MARIELA</li>
+      <li><strong>NIF:</strong> X9473803B</li>
+      <li><strong>Nombre Comercial:</strong> Danais Natural Cosmetics</li>
+      <li><strong>Correo electrónico de contacto:</strong> <a href="mailto:marieladanais31@gmail.com">marieladanais31@gmail.com</a></li>
+    </ul>
+    <p>El presente sitio web tiene carácter meramente informativo y comercial. Danais Natural Cosmetics se reserva el derecho a modificar, sin previo aviso, los contenidos de esta web. El acceso y uso del sitio implica la aceptación de las condiciones aquí descritas.</p>
+    <p>Todos los contenidos de este sitio (textos, imágenes, logotipos, código) son propiedad de Danais Natural Cosmetics o de terceros que han autorizado su uso, y están protegidos por la legislación española e internacional sobre propiedad intelectual.</p>
+  </div>
+</div>
+
+<div class="legal-modal" id="lm-privacidad" role="dialog" aria-modal="true" aria-labelledby="lm-priv-title">
+  <div class="legal-modal-inner">
+    <button class="lm-close" onclick="closeLegal('privacidad')" aria-label="Cerrar">×</button>
+    <h3 id="lm-priv-title">Política de Privacidad</h3>
+    <p><strong>Responsable del tratamiento:</strong> ANDRADE APARICIO DE VIDAL MARIELA — NIF: X9473803B — Mont-roig del Camp, Tarragona, España</p>
+    <p><strong>Finalidad:</strong> Gestión de reservas de preventa, envío de información sobre el lanzamiento de productos y comunicaciones comerciales relacionadas.</p>
+    <p><strong>Base jurídica:</strong> Consentimiento expreso del interesado (Art. 6.1.a RGPD).</p>
+    <p><strong>Conservación:</strong> Los datos se conservarán hasta que retires el consentimiento o durante un máximo de 3 años desde la última interacción.</p>
+    <p><strong>Destinatarios:</strong> No se cederán datos a terceros salvo obligación legal. Podemos utilizar proveedores de servicios de correo electrónico (encargados del tratamiento) que actúan bajo contrato de conformidad con el RGPD.</p>
+    <p><strong>Derechos:</strong> Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <a href="mailto:marieladanais31@gmail.com">hola@danaisnatural.com</a>. Tienes derecho a presentar una reclamación ante la AEPD (www.aepd.es).</p>
+  </div>
+</div>
+
+<div class="legal-modal" id="lm-cookies" role="dialog" aria-modal="true" aria-labelledby="lm-cook-title">
+  <div class="legal-modal-inner">
+    <button class="lm-close" onclick="closeLegal('cookies')" aria-label="Cerrar">×</button>
+    <h3 id="lm-cook-title">Política de Cookies</h3>
+    <p>Este sitio utiliza únicamente cookies técnicas estrictamente necesarias para su funcionamiento (sesión, preferencias de idioma, consentimiento de cookies). No utilizamos cookies de terceros, analíticas ni publicitarias sin tu consentimiento expreso.</p>
+    <p><strong>Cookies técnicas:</strong> No requieren consentimiento (Art. 22.2 LSSI). Se eliminan al cerrar el navegador o tienen una duración máxima de 12 meses.</p>
+    <p><strong>Cookies no esenciales:</strong> Solo se activan si aceptas el banner de cookies. Puedes revocar tu consentimiento en cualquier momento borrando las cookies de tu navegador o usando el botón de gestión en el pie de página.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ COOKIE BANNER ═══════════════════════════════ -->
+<div class="cookie-banner" id="cookie-banner" style="display:none">
+  <p>Usamos cookies técnicas para el funcionamiento del sitio. Solo activamos cookies analíticas si aceptas. Más info en nuestra <a href="#" onclick="openLegal('cookies');return false">Política de Cookies</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn-cookie-accept" id="cookie-accept">Aceptar todo</button>
+    <button class="btn-cookie-reject" id="cookie-reject">Solo necesarias</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ ARTICLE MODAL ═══════════════════════════════ -->
+<div class="art-modal" id="art-modal" role="dialog" aria-modal="true" aria-labelledby="art-modal-title">
+  <div class="art-modal-inner">
+    <button class="art-modal-close" id="art-modal-close" aria-label="Cerrar">×</button>
+    <div class="art-modal-hero">
+      <p class="art-num" id="art-modal-num"></p>
+      <h2 id="art-modal-title"></h2>
+    </div>
+    <div class="art-modal-body" id="art-modal-body"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ JAVASCRIPT ═══════════════════════════════ -->
+<script>
+/* ── PRODUCT DATA ── */
+const PRODUCTS = {
+  /* KITS */
+  'kit-lavado': {
+    name: 'Kit de Lavado',
+    img: 'assets/Kit-Shampoo-y-Acondicionador-Solido-editado.jpg',
+    claim: 'El dúo completo para un lavado suave y respetuoso. Sin sulfatos ni siliconas, con activos botánicos de la Línea Equilibrante que limpian y acondicionan sin robar humedad al rizo.',
+    uso: 'Usa primero el Shampoo Sólido para limpiar el cuero cabelludo con suavidad, y luego el Acondicionador Sólido de medios a puntas para desenredar y nutrir. Perfecto como paso 1 y 2 de la rutina CGM.',
+    // INCI: verificar con ficha técnica
+    inci: 'Ver fichas individuales del Shampoo Sólido Equilibrante y el Acondicionador Sólido Desenredante. <!-- INCI: verificar con ficha técnica -->'
+  },
+  'kit-definicion': {
+    name: 'Kit de Definición',
+    img: 'assets/Kit-definicion-de-rizos-.jpg',
+    claim: 'La rutina de definición completa en un solo kit: crema de base, gel fijador y óleo de acabado. Todo lo que tu rizo necesita para lucir elástico, definido y sin efecto acartonado.',
+    uso: 'Aplica la Crema de Peinar sobre cabello muy húmedo de medios a puntas. A continuación el Gel Definidora con scrunch o praying hands. Deja secar sin tocar y, una vez seco, rompe el cast con 2–3 gotas del Óleo Multiuso.',
+    // INCI: verificar con ficha técnica
+    inci: 'Ver fichas individuales de la Crema de Peinar Vegetal, Gel Definidora Vegetal y Óleo Multiuso. <!-- INCI: verificar con ficha técnica -->'
+  },
+  /* INDIVIDUALES */
+  'shampoo': {
+    name: 'Shampoo Sólido Equilibrante',
+    img: 'assets/shampoo-solido-editado.jpg',
+    claim: 'Limpieza suave sin sulfatos que respeta el equilibrio natural del cuero cabelludo. Con Mucina de Nopal y Shikakai (activos ayurvédicos) para rizos definidos desde el primer lavado.',
+    uso: 'Frota la barra sobre el cabello mojado o entre las manos hasta obtener espuma. Masajea el cuero cabelludo con las yemas y aclara con abundante agua. Deja secar la barra entre usos.',
+    // INCI: verificar con ficha técnica
+    inci: '<span class="inci-text">Sodium Cocoyl Isethionate, Cocamidopropyl Betaine, Opuntia Ficus-Indica Stem Extract, Acacia Concinna Fruit Extract, Mauritia Flexuosa Fruit Oil, Butyrospermum Parkii (Shea) Butter, Glycerin, Aqua. <!-- INCI: verificar con ficha técnica --></span>'
+  },
+  'acondicionador': {
+    name: 'Acondicionador Sólido Desenredante',
+    img: 'assets/Acondicionador-solido-editado.jpg',
+    claim: 'Desenreda sin siliconas con activos ayurvédicos que suavizan, nutren y definen el rizo natural. Karité y Burití para un cabello suave y brillante.',
+    uso: 'Tras el lavado, desliza la barra de medios a puntas sobre el cabello muy húmedo. Desenreda con peine de púas anchas o con los dedos y aclara. Deja secar la barra entre usos.',
+    // INCI: verificar con ficha técnica
+    inci: '<span class="inci-text">Behentrimonium Methosulfate, Cetearyl Alcohol, Opuntia Ficus-Indica Stem Extract, Mauritia Flexuosa Fruit Oil, Butyrospermum Parkii (Shea) Butter, Prunus Amygdalus Dulcis Oil, Panthenol, Aqua. <!-- INCI: verificar con ficha técnica --></span>'
+  },
+  'crema': {
+    name: 'Crema de Peinar Vegetal',
+    img: 'assets/crema-de-peinar-ediada.jpg',
+    claim: 'Definición ligera y duradera sin aclarado. Prepara el rizo para el gel con hidratación botánica que no pesa ni deja residuos.',
+    uso: 'Sobre cabello muy húmedo, aplica de medios a puntas y distribuye con praying hands o peine. No necesita aclarado. Continúa con tu gel para fijar la definición.',
+    // INCI: verificar con ficha técnica
+    inci: '<span class="inci-text">Aqua, Linum Usitatissimum Seed Extract, Opuntia Ficus-Indica Stem Extract, Mauritia Flexuosa Fruit Oil, Butyrospermum Parkii (Shea) Butter, Glycerin, Cetearyl Alcohol, Panthenol, Benzyl Alcohol, Dehydroacetic Acid. <!-- INCI: verificar con ficha técnica --></span>'
+  },
+  'gel': {
+    name: 'Gel Definidora Vegetal',
+    img: 'assets/Gel-Definidora-con-Buriti.jpg',
+    claim: 'Fijación sin residuos ni efecto acartonado. Linaza, Mucina de Nopal y Burití para rizos elásticos y brillantes que forman cast y se rompen suave.',
+    uso: 'Aplica sobre el cabello muy húmedo después de la crema, con scrunch o praying hands. Deja secar al aire o con difusor sin tocar el rizo. Rompe el cast con unas gotas de Óleo Multiuso.',
+    // INCI: verificar con ficha técnica
+    inci: '<span class="inci-text">Aqua, Linum Usitatissimum Seed Extract, Opuntia Ficus-Indica Stem Extract, Mauritia Flexuosa Fruit Oil, Carbomer, Glycerin, Sodium Hydroxide, Panthenol. <!-- INCI: verificar con ficha técnica --></span>'
+  },
+  'oleo': {
+    name: 'Óleo Multiuso',
+    img: 'assets/Oleo-Multiuso-Editado.jpg',
+    claim: 'Triple función: pre-lavado protector, rompe cast suave y sérum de acabado sellador. Con aceites de Semilla de Lino, Cúpula, Almendras y Burití.',
+    uso: 'Como pre-lavado: aplica en seco 30 minutos antes del shampoo. Como acabado: calienta 2-3 gotas en las palmas y presiona sobre el rizo seco para romper el cast y sellar las puntas.',
+    // INCI: verificar con ficha técnica
+    inci: '<span class="inci-text">Linum Usitatissimum Seed Oil, Mauritia Flexuosa Fruit Oil, Prunus Amygdalus Dulcis Oil, Orbignya Oleifera Seed Oil, Rosmarinus Officinalis Leaf Extract, Tocopherol. <!-- INCI: verificar con ficha técnica --></span>'
+  },
+  'cobrizo': {
+    name: 'Cobrizo Tierra — Baño de Color y Tratamiento Reparador',
+    img: 'assets/Coloracion-Vegetal-editada.jpg',
+    claim: 'Color vegetal que trata mientras colorea. Henna, Coral, Neem y Arcilla Negra para cabellos rizados que buscan brillo cálido y restauración profunda en una sola aplicación.',
+    uso: 'Mezcla con agua tibia hasta obtener una pasta espesa y deja reposar 30 minutos. Aplica sobre cabello limpio y deja actuar entre 2½ y 3 horas. Aclara con abundante agua y finaliza con acondicionador o mascarilla hidratante.',
+    // INCI: verificar con ficha técnica
+    inci: '<span class="inci-text">Lawsonia Inermis Leaf Powder, Cassia Obovata Seed Powder, Azadirachta Indica Leaf Extract, Illite, Emblica Officinalis Fruit Extract, Aqua. <!-- INCI: verificar con ficha técnica --></span>'
+  }
+};
+
+/* ── NAV SCROLL ── */
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, {passive: true});
+
+/* ── PRODUCT TABS ── */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.target;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.prod-section').forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+  });
+});
+
+/* ── PRODUCT MODAL ── */
+const modal = document.getElementById('prod-modal');
+const modalImg = document.getElementById('modal-img');
+const modalTitle = document.getElementById('modal-title');
+const modalClaim = document.getElementById('modal-claim');
+const modalUso = document.getElementById('modal-uso');
+const modalInci = document.getElementById('modal-inci');
+
+function openProductModal(key) {
+  const p = PRODUCTS[key];
+  if (!p) return;
+  modalImg.src = p.img;
+  modalImg.alt = p.name;
+  modalTitle.textContent = p.name;
+  modalClaim.innerHTML = '<p>' + p.claim + '</p>';
+  modalUso.innerHTML = '<p>' + p.uso + '</p>';
+  modalInci.innerHTML = p.inci.startsWith('<') ? p.inci : '<p class="inci-text">' + p.inci + '</p>';
+  // reset tabs
+  document.querySelectorAll('.mtab-btn').forEach((b,i) => {
+    b.classList.toggle('active', i === 0);
+    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+  });
+  document.querySelectorAll('.mtab-content').forEach((c,i) => c.classList.toggle('active', i === 0));
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+document.querySelectorAll('.prod-card[data-product]').forEach(card => {
+  const open = () => openProductModal(card.dataset.product);
+  card.addEventListener('click', open);
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+});
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* Modal inner tabs */
+document.querySelectorAll('.mtab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.mtab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.mtab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected','true');
+    document.getElementById('modal-' + tab).classList.add('active');
+  });
+});
+
+/* ── INTERSECTIONOBSERVER REVEAL ── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('on');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.10});
+document.querySelectorAll('.rev').forEach(el => observer.observe(el));
+
+/* ── PARALLAX MED BANNER ── */
+const medBg = document.getElementById('med-banner-bg');
+if (medBg) {
+  window.addEventListener('scroll', () => {
+    const rect = medBg.parentElement.getBoundingClientRect();
+    const offset = (rect.top / window.innerHeight) * 40;
+    medBg.style.transform = 'translateY(' + offset + 'px)';
+  }, {passive: true});
+}
+
+/* ── PREVENTA FORM ── */
+const WA_NUM = '34624702715';
+
+document.getElementById('preventa-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const nombre = document.getElementById('prev-nombre').value.trim();
+  const email = document.getElementById('prev-email').value.trim();
+  const producto = document.getElementById('prev-producto').value;
+  const rgpd = document.getElementById('rgpd').checked;
+  if (!email || !rgpd) { alert('Por favor completa el correo y acepta la política de privacidad.'); return; }
+  const msg = `¡Hola Danais! Quiero reservar en la preventa.\n\n• Nombre: ${nombre}\n• Email: ${email}\n• Producto de interés: ${producto || 'Sin especificar'}`;
+  window.open(`https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`, '_blank');
+  this.style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+});
+
+document.getElementById('embajadora-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const nombre = document.getElementById('emb-nombre').value.trim();
+  const tel = document.getElementById('emb-telefono').value.trim();
+  const ciudad = document.getElementById('emb-ciudad').value.trim();
+  const rgpd = document.getElementById('emb-rgpd').checked;
+  if (!nombre || !tel || !rgpd) { alert('Por favor completa tu nombre, teléfono y acepta la política de privacidad.'); return; }
+  const msg = `¡Hola Danais! Quiero inscribirme como EMBAJADORA DANAIS (100 €/año · 30% dto. en productos · 20% comisión en talleres).\n\n• Nombre: ${nombre}\n• Teléfono: ${tel}\n• Ciudad/Zona: ${ciudad || 'Sin especificar'}\n\n¿Cómo formalizo la inscripción?`;
+  window.open(`https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`, '_blank');
+  this.reset();
+  alert('¡Solicitud enviada! Se abrirá WhatsApp para confirmar tu inscripción con Mariela.');
+});
+
+/* ── LEGAL MODALS ── */
+function openLegal(type) {
+  document.querySelectorAll('.legal-modal').forEach(m => m.classList.remove('open'));
+  const m = document.getElementById('lm-' + type);
+  if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+}
+function closeLegal(type) {
+  const m = document.getElementById('lm-' + type);
+  if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+}
+document.querySelectorAll('.legal-modal').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) { m.classList.remove('open'); document.body.style.overflow = ''; } });
+});
+
+/* ── COOKIE CONSENT ── */
+const cookieBanner = document.getElementById('cookie-banner');
+if (!localStorage.getItem('dnc_consent')) {
+  cookieBanner.style.display = 'flex';
+}
+document.getElementById('cookie-accept').addEventListener('click', () => {
+  localStorage.setItem('dnc_consent', 'all');
+  cookieBanner.style.display = 'none';
+  // Aquí se activarían cookies analíticas (Google Analytics, etc.)
+});
+document.getElementById('cookie-reject').addEventListener('click', () => {
+  localStorage.setItem('dnc_consent', 'necessary');
+  cookieBanner.style.display = 'none';
+});
+
+/* ── ARTICLE DATA ── */
+const ARTICLES = {
+  1: {
+    num: '01', title: 'Qué tipo de rizo tengo: guía rápida para empezar',
+    body: `
+      <p>Conocer tu tipo de rizo es un buen punto de partida, pero no es lo único que define tu rutina. Una persona puede tener varios patrones a la vez, y eso es completamente normal. En Danais usamos el tipo de rizo como una primera pista, pero también miramos porosidad, densidad, grosor, clima y técnica.</p>
+      <h3>Cómo se clasifican los rizos</h3>
+      <p>El número indica la forma general: <strong>Tipo 2</strong> = ondas, <strong>Tipo 3</strong> = rizos, <strong>Tipo 4</strong> = rizos muy cerrados o coily. La letra indica qué tan cerrado es el patrón: <strong>A</strong> más abierto, <strong>B</strong> intermedio, <strong>C</strong> más cerrado.</p>
+      <h3>Tipo 2 — Ondulado</h3>
+      <p>Forma ondas. Puede necesitar productos ligeros para no perder volumen. Usa poca crema, gel ligero, evita el exceso de aceites pesados y trabaja con buena cantidad de agua.</p>
+      <h3>Tipo 3 — Rizado</h3>
+      <p>Forma rizos más definidos, desde espirales sueltos hasta rizos más compactos. Usa crema de peinar, sella con gel, aplica por secciones y activa con scrunch o cepillo.</p>
+      <h3>Tipo 4 — Muy Rizado, Coily o Afro</h3>
+      <p>Suele tener más encogimiento y necesita hidratación constante, manipulación suave y productos bien repartidos por secciones. Aplica en secciones pequeñas, usa mascarilla con frecuencia, sella la hidratación y duerme con protección de satén.</p>
+      <h3>Lo más importante</h3>
+      <p>Tu tipo de rizo no es una etiqueta rígida. Para crear una rutina real también necesitas observar la porosidad, la densidad, el grosor, la elasticidad, el frizz, el clima y tu estilo de vida.</p>
+      <div class="art-cta-box"><p>¿Quieres saber más sobre tu cabello?</p><a href="#preventa" onclick="closeArtModal()" class="btn btn-dark">Habla con Danais</a></div>`
+  },
+  2: {
+    num: '02', title: 'Qué es la porosidad y por qué cambia tu rutina',
+    body: `
+      <p>La porosidad es la facilidad con la que tu cabello absorbe y pierde agua. Es una de las claves más importantes para elegir bien tus productos y técnicas.</p>
+      <h3>Porosidad baja</h3>
+      <p>El cabello suele tardar en mojarse. A veces el producto se queda encima y el cabello se siente pesado. Usa poca cantidad de producto, aplica con el cabello muy húmedo, prefiere productos ligeros y usa calor suave o vapor para ayudar a abrir la cutícula.</p>
+      <h3>Porosidad media</h3>
+      <p>Es la más equilibrada: absorbe y retiene bien la hidratación. Mantén una rutina balanceada, alterna hidratación y nutrición, y evita el exceso de producto.</p>
+      <h3>Porosidad alta</h3>
+      <p>Absorbe rápido pero también pierde agua rápido. Puede sentirse seco con facilidad. Hidrata bien, sella con crema, gel o aceite ligero, usa mascarillas con más frecuencia y evita la fricción y el calor excesivo.</p>
+      <h3>Error común</h3>
+      <p>Comprar productos solo por tipo de rizo. Dos personas con rizo tipo 3 pueden necesitar rutinas distintas si una tiene porosidad baja y otra alta.</p>
+      <div class="art-cta-box"><p>¿No sabes tu porosidad?</p><a href="https://wa.me/34624702715?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20porosidad%20de%20mi%20cabello." target="_blank" class="btn btn-dark">Consulta con Danais</a></div>`
+  },
+  3: {
+    num: '03', title: 'Por qué aparece el frizz y cómo ayudar a controlarlo',
+    body: `
+      <p>El frizz no significa que tu cabello esté "mal". Muchas veces aparece cuando la cutícula está abierta y busca humedad en el ambiente. También puede aparecer por falta de hidratación, fricción, tocar el rizo mientras seca o usar una técnica incorrecta.</p>
+      <h3>Causas frecuentes</h3>
+      <ul><li>Falta de agua en la hebra</li><li>Clima húmedo</li><li>Cutícula abierta</li><li>Secar con toalla de algodón</li><li>Peinar o cepillar en seco</li><li>Tocar el cabello mientras se seca</li><li>No sellar con gel o aceite ligero</li></ul>
+      <h3>Cómo ayudar a controlarlo</h3>
+      <ul><li>Aplica productos con el cabello muy húmedo</li><li>Trabaja por secciones</li><li>Usa una toalla de microfibra o camiseta</li><li>Sella con gel si buscas más duración</li><li>No toques el rizo mientras seca</li><li>Duerme con funda o gorro de satén</li></ul>
+      <h3>Lo que no prometemos</h3>
+      <p>No prometemos eliminar el frizz al 100%. El frizz también forma parte del cabello texturizado. Lo que sí puedes hacer es aprender a controlarlo mejor con hidratación, técnica y rutina constante.</p>
+      <div class="art-cta-box"><p>Aprende la técnica en nuestros talleres</p><a href="#talleres" onclick="closeArtModal()" class="btn btn-dark">Ver Talleres Danais</a></div>`
+  },
+  4: {
+    num: '04', title: 'Cuánta crema y gel usar según tu cabello',
+    body: `
+      <p>Uno de los errores más comunes en el cabello rizado es usar demasiado producto o aplicarlo con poca agua. La cantidad correcta depende sobre todo de la densidad, el grosor y la porosidad.</p>
+      <h3>Cabello fino o baja densidad</h3>
+      <p>Usa cantidades pequeñas para evitar apelmazar. <strong>Crema:</strong> 1 a 2 presiones. <strong>Gel:</strong> una cantidad pequeña por lado. Reparte con mucha agua.</p>
+      <h3>Cabello medio</h3>
+      <p>Suele tolerar una rutina equilibrada. <strong>Crema:</strong> 2 a 3 presiones. <strong>Gel:</strong> cantidad media. Aplica por secciones.</p>
+      <h3>Cabello denso o grueso</h3>
+      <p>Necesita paciencia al repartir el producto. <strong>Crema:</strong> 3 a 4 presiones, repartidas por secciones. <strong>Gel:</strong> aplica por zonas con scrunch.</p>
+      <h3>Tip de oro</h3>
+      <p>Más agua suele dar mejor distribución. Si el producto se queda blanco, pegajoso o pesado, puede que estés usando demasiado o que falte agua.</p>
+      <div class="art-cta-box"><p>Descubre la Crema de Peinar y el Gel Definidora Danais</p><a href="#productos" onclick="closeArtModal()" class="btn btn-dark">Ver productos</a></div>`
+  },
+  5: {
+    num: '05', title: 'Cómo definir rizos con cepillo paso a paso',
+    body: `
+      <p>El cepillo de definición puede ayudar a agrupar el rizo y repartir mejor el producto, especialmente cuando se usa con el cabello muy húmedo y por secciones.</p>
+      <h3>Antes de empezar</h3>
+      <p>Necesitas: cabello limpio o recién acondicionado, agua suficiente, crema de peinar, gel, cepillo de definición, y toalla de microfibra o camiseta.</p>
+      <h3>Paso 1 — Humedece bien</h3>
+      <p>El cabello debe estar muy húmedo. Si está casi seco, el cepillo puede separar el rizo y aumentar el frizz.</p>
+      <h3>Paso 2 — Aplica crema por secciones</h3>
+      <p>Divide el cabello y aplica producto con paciencia. En cabello denso, las secciones pequeñas hacen una gran diferencia.</p>
+      <h3>Paso 3 — Desliza el cepillo</h3>
+      <p>Coloca el cepillo cerca de la raíz y deslízalo hacia las puntas con suavidad. Deja que el cabello se agrupe solo. No separes los grupos después.</p>
+      <h3>Paso 4 — Sella con gel</h3>
+      <p>Aplica gel para ayudar a mantener la forma. Haz scrunch de puntas hacia arriba.</p>
+      <h3>Paso 5 — Seca sin tocar</h3>
+      <p>Puedes secar al aire o con difusor en temperatura baja. Evita tocar el cabello mientras seca.</p>
+      <h3>Errores frecuentes</h3>
+      <ul><li>Cepillar en seco</li><li>Usar poca agua</li><li>Aplicar demasiado producto</li><li>No trabajar por secciones</li><li>Romper los grupos de rizos</li></ul>
+      <div class="art-cta-box"><p>Aprende esta técnica con el Cepillo Bounce Curl</p><a href="#productos" onclick="closeArtModal()" class="btn btn-dark">Ver Cepillo Bounce Curl</a></div>`
+  },
+  6: {
+    num: '06', title: 'Refresh día 2 y día 3: cómo revivir tus rizos sin lavar',
+    body: `
+      <p>No tienes que lavar el cabello todos los días para mantener tus rizos. El refresh ayuda a reactivar la forma entre lavados y a estirar tu wash day.</p>
+      <h3>Cuándo hacer refresh</h3>
+      <p>Haz refresh cuando el rizo perdió forma, hay zonas aplastadas, necesitas controlar un poco el frizz o el cabello no está sucio, solo necesita reactivarse.</p>
+      <h3>Paso 1 — Observa antes de mojar</h3>
+      <p>No todo el cabello necesita refresh. A veces basta con retocar algunas zonas.</p>
+      <h3>Paso 2 — Humedece lo justo</h3>
+      <p>Usa agua o spray activador. No empapes si no hace falta.</p>
+      <h3>Paso 3 — Reactiva con scrunch</h3>
+      <p>Aprieta de puntas hacia arriba para ayudar a recuperar la forma.</p>
+      <h3>Paso 4 — Sella si hace falta</h3>
+      <p>Puedes añadir una microcantidad de crema, gel o unas gotas del Óleo Multiuso Danais en zonas específicas.</p>
+      <h3>Errores frecuentes</h3>
+      <ul><li>Echar demasiado producto</li><li>Cepillar en seco</li><li>Refrescar todo cuando solo algunas zonas lo necesitan</li><li>Usar aceite pesado en cabello fino</li></ul>
+      <h3>Tip nocturno</h3>
+      <p>Dormir con piña y satén reduce la necesidad de refresh al día siguiente.</p>
+      <div class="art-cta-box"><p>El Óleo Multiuso Danais es perfecto para el refresh</p><a href="#productos" onclick="closeArtModal()" class="btn btn-dark">Ver Óleo Multiuso</a></div>`
+  },
+  7: {
+    num: '07', title: 'Historia del rizo: de África a Panamá',
+    body: `
+      <p>El cabello rizado y afro tiene una historia que va mucho más allá del cuidado capilar. Es una historia de identidad, resistencia y orgullo cultural que conecta África con América Latina y, desde ahí, con el resto del mundo.</p>
+      <h3>Los orígenes africanos</h3>
+      <p>El cabello afro y muy rizado es una característica natural de muchas personas de origen subsahariano. Durante siglos, el cuidado y el peinado del cabello en las culturas africanas fue una práctica social, ritual y artística. Los patrones y rituales de cuidado se transmitían de generación en generación.</p>
+      <h3>El impacto de la colonización</h3>
+      <p>Con la trata de personas esclavizadas, millones de personas africanas fueron arrancadas de su contexto cultural. Sus prácticas de cuidado se interrumpieron, sus recursos se perdieron y sus formas de llevar el cabello fueron frecuentemente estigmatizadas o prohibidas.</p>
+      <h3>La diáspora africana en América Latina</h3>
+      <p>En Panamá, Colombia, Brasil, Cuba y otros países, la diáspora africana desarrolló nuevas tradiciones de cuidado adaptadas a los recursos locales. Plantas como el nopal, la henna y los aceites vegetales tropicales se convirtieron en herramientas de cuidado profundamente arraigadas.</p>
+      <h3>El movimiento del cabello natural</h3>
+      <p>A partir de la segunda mitad del siglo XX, y especialmente desde los años 2000, movimientos como el <em>Black is Beautiful</em> y el <em>Curly Girl Method</em> devolvieron el protagonismo al cabello natural. Las mujeres empezaron a documentar sus rutinas, compartir fórmulas y crear comunidades.</p>
+      <h3>Danais y la herencia botánica</h3>
+      <p>Danais nació en Panamá en 2017 dentro de ese contexto. Con ingredientes botánicos locales y una filosofía de respeto por la textura natural, su propuesta conecta la tradición de cuidado con la cosmética botánica artesanal.</p>
+      <div class="art-cta-box"><p>Conoce la historia de Danais</p><a href="#historia" onclick="closeArtModal()" class="btn btn-dark">Nuestra historia</a></div>`
+  },
+  8: {
+    num: '08', title: 'Herramientas esenciales: cepillo, difusor y microfibra',
+    body: `
+      <p>Las herramientas que usas importan tanto como los productos. Algunas ayudan a distribuir mejor el producto, otras a definir el patrón y otras a protegerlo mientras seca.</p>
+      <h3>Cepillo de definición</h3>
+      <p>Los cepillos tipo Bounce Curl o Denman ayudan a agrupar el rizo y repartir el producto desde la raíz hasta la punta. Úsalo solo con el cabello muy húmedo, con crema de base, por secciones y deslizando sin tirar.</p>
+      <h3>Difusor</h3>
+      <p>Permite secar el cabello con calor sin romper el rizo. Colócalo en la boca del secador, usa temperatura y velocidad bajas, sujeta el rizo desde abajo hacia la cabeza y mueve lo menos posible.</p>
+      <h3>Toalla de microfibra o camiseta</h3>
+      <p>La toalla de algodón genera fricción y provoca frizz. La microfibra absorbe el agua con más suavidad: aplica producto, envuelve con plopping y no frotes.</p>
+      <h3>Peine de púas anchas</h3>
+      <p>Útil para desenredar con cuidado, siempre con el cabello húmedo y con acondicionador o crema de peinar aplicada.</p>
+      <h3>Funda de satén o gorro de noche</h3>
+      <p>Protege el rizo mientras duermes, reduce la fricción con la almohada y alarga el tiempo entre lavados.</p>
+      <div class="art-cta-box"><p>El Cepillo Bounce Curl está disponible en Danais</p><a href="#productos" onclick="closeArtModal()" class="btn btn-dark">Consultar disponibilidad</a></div>`
+  },
+  9: {
+    num: '09', title: 'Cómo dormir con rizos',
+    body: `
+      <p>Una buena noche de sueño puede ser tu mejor aliada o tu peor enemiga si tienes rizo. La fricción con la almohada, el aplastamiento y la sequedad nocturna pueden deshacer en horas lo que tardaste en conseguir.</p>
+      <h3>La piña (pineapple)</h3>
+      <p>Recoge el cabello en lo alto de la cabeza con una coleta suave y sin tensión. Preserva los rizos y evita el aplastamiento. Usa una goma sin metal o de satén, no aprietes demasiado y coloca la coleta muy arriba.</p>
+      <h3>La funda o gorro de satén</h3>
+      <p>El satén o la seda tienen mucha menos fricción que el algodón. Protegen la hidratación y el patrón del rizo. Puedes elegir gorro de satén (fácil y económico), funda de almohada de satén (más cómoda) o pañuelo de satén enrollado.</p>
+      <h3>La trenza suelta</h3>
+      <p>Para rizos más largos o de alta densidad, una o dos trenzas sueltas pueden proteger el patrón y alargar el wash day.</p>
+      <h3>Qué hacer por la mañana</h3>
+      <p>Observa antes de actuar. Muchas veces el rizo solo necesita un poco de agua o scrunch para recuperarse. No mojes todo si no hace falta.</p>
+      <h3>Lo que no funciona</h3>
+      <ul><li>Almohada de algodón sin protección</li><li>Goma elástica normal con metal</li><li>Recoger demasiado apretado</li><li>Echar agua a chorro por la mañana sin observar primero</li></ul>
+      <div class="art-cta-box"><p>Lee también: Refresh día 2 y 3</p><a href="#enciclopedia" onclick="closeArtModal()" class="btn btn-dark">Ver más artículos</a></div>`
+  },
+  10: {
+    num: '10', title: 'Rutinas personalizadas por tipo de cabello',
+    body: `
+      <p>No existe una rutina perfecta igual para todos. La rutina ideal depende de tu tipo de rizo, tu porosidad, tu densidad, el clima donde vives y cuánto tiempo tienes disponible.</p>
+      <h3>Antes de empezar: observa tu cabello</h3>
+      <ul><li>¿Cuánto tarda en mojarse?</li><li>¿Se siente pesado o ligero con los productos?</li><li>¿Qué tan definido queda sin producto?</li><li>¿Cuánto encoge cuando seca?</li><li>¿Qué clima tienes?</li></ul>
+      <h3>Rutina básica para porosidad baja</h3>
+      <p>Lava con shampoo suave · acondicionador ligero bien aclarado · crema con agua abundante · gel ligero · seca al aire o con difusor a baja temperatura.</p>
+      <h3>Rutina básica para porosidad alta</h3>
+      <p>Shampoo sin sulfatos · acondicionador nutritivo más tiempo de actuación · crema de base para sellar · gel para fijar · sella con una gota de aceite ligero al final.</p>
+      <h3>Rutina express (días de poco tiempo)</h3>
+      <p>Moja y acondiciona · gel solo sin crema · seca con difusor.</p>
+      <h3>Rutina de mantenimiento (fin de semana)</h3>
+      <p>Prelavado con Óleo Multiuso · Shampoo Sólido · mascarilla 10–20 minutos · Crema + Gel · seca al aire.</p>
+      <h3>Lo más importante</h3>
+      <p>La constancia importa más que la perfección. Una rutina simple que mantienes vale más que una elaborada que abandonas.</p>
+      <div class="art-cta-box"><p>Reserva tu kit de inicio Danais</p><a href="#preventa" onclick="closeArtModal()" class="btn btn-dark">Reservar en preventa</a></div>`
+  }
+};
+
+/* ── ARTICLE MODAL ── */
+const artModal = document.getElementById('art-modal');
+const artModalTitle = document.getElementById('art-modal-title');
+const artModalNum = document.getElementById('art-modal-num');
+const artModalBody = document.getElementById('art-modal-body');
+
+function openArtModal(id) {
+  const a = ARTICLES[id];
+  if (!a) return;
+  artModalNum.textContent = 'Artículo ' + a.num;
+  artModalTitle.textContent = a.title;
+  artModalBody.innerHTML = a.body;
+  artModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  artModal.scrollTop = 0;
+}
+function closeArtModal() {
+  artModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.article-card[data-article]').forEach(card => {
+  const open = () => openArtModal(parseInt(card.dataset.article));
+  card.addEventListener('click', open);
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+});
+
+document.getElementById('art-modal-close').addEventListener('click', closeArtModal);
+artModal.addEventListener('click', e => { if (e.target === artModal) closeArtModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && artModal.classList.contains('open')) closeArtModal(); });
+</script>
+</body>
+</html>

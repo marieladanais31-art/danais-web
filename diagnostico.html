@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico Capilar de Precisión - Danais Natural</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            danais: {
+              teal: '#158484',
+              tealDark: '#0b5a5a',
+              tealLight: '#eefcfc',
+              gold: '#d4af37',
+              beige: '#faf7f0',
+              beigeDark: '#eedec5',
+              charcoal: '#2e3a3a'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #faf7f0;
+    }
+    .bg-leaf-pattern {
+      background-color: #faf7f0;
+      background-image: radial-gradient(#15848408 1px, transparent 1px), radial-gradient(#15848405 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #faf7f0;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #158484;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body class="bg-leaf-pattern min-h-screen flex flex-col justify-between text-danais-charcoal">
+
+  <!-- Header -->
+  <header class="w-full bg-white/80 backdrop-blur-md border-b border-danais-beigeDark py-4 px-6 sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <a href="index.html"><img src="assets/danais-logo-sin-fondo.png" alt="Danais Natural" class="h-10 md:h-12 object-contain" onerror="this.src='https://placehold.co/150x50/158484/ffffff?text=Danais+Natural'"></a>
+      <div class="text-[10px] tracking-widest font-bold text-danais-teal uppercase">
+        Diagnóstico Capilar Avanzado
+      </div>
+    </div>
+  </header>
+
+  <!-- App Wrapper -->
+  <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-8">
+    
+    <!-- PANTALLA INICIAL -->
+    <div id="welcome-screen" class="bg-white rounded-3xl shadow-xl border border-danais-beigeDark overflow-hidden p-6 md:p-10 text-center flex flex-col items-center">
+      <div class="relative w-full max-w-lg mb-6 overflow-hidden rounded-2xl shadow-md">
+        <img src="assets/Linea-completa.jpg" alt="Línea Completa Danais" class="w-full object-cover h-64 md:h-80" onerror="this.src='https://placehold.co/800x400/158484/ffffff?text=Danais+Natural+Cosmetics'">
+        <div class="absolute inset-0 bg-gradient-to-t from-danais-charcoal/40 to-transparent"></div>
+      </div>
+      
+      <h1 class="font-serif text-3xl md:text-5xl text-danais-tealDark mb-4 leading-tight">
+        Tu Fórmula Botánica Hecha a Medida
+      </h1>
+      <p class="text-gray-600 text-base md:text-lg max-w-2xl mb-8 leading-relaxed">
+        Descubre de forma precisa qué ingredientes botánicos, rutina, cantidad de productos y métodos de estilizado potenciarán la naturaleza de tu cabello.
+      </p>
+
+      <button onclick="startQuiz()" class="bg-danais-teal hover:bg-danais-tealDark text-white font-semibold text-lg py-4 px-10 rounded-full shadow-lg transition-all transform hover:scale-105 flex items-center gap-3">
+        Iniciar Diagnóstico Personalizado
+        <i class="fa-solid fa-leaf text-danais-beigeDark"></i>
+      </button>
+    </div>
+
+    <!-- CONTENEDOR DEL TEST -->
+    <div id="quiz-container" class="hidden bg-white rounded-3xl shadow-xl border border-danais-beigeDark p-6 md:p-10">
+      
+      <!-- Indicador de pasos -->
+      <div class="mb-8">
+        <div class="flex justify-between items-center text-xs text-danais-teal font-semibold uppercase tracking-wider mb-2">
+          <span id="step-indicator">Paso 1 de 6</span>
+          <span id="progress-percentage">16% Completado</span>
+        </div>
+        <div class="w-full bg-danais-tealLight h-2 rounded-full overflow-hidden border border-danais-teal/10">
+          <div id="progress-bar" class="bg-gradient-to-r from-danais-teal to-danais-tealDark h-full transition-all duration-300" style="width: 16%"></div>
+        </div>
+      </div>
+
+      <!-- Preguntas -->
+      <div>
+        <!-- PASO 1: TIPO DE RIZO -->
+        <div id="question-step-1" class="quiz-step">
+          <h2 class="font-serif text-2xl md:text-3xl text-danais-tealDark mb-2">1. ¿Cuál es el patrón o estructura de tu cabello?</h2>
+          <p class="text-sm text-gray-500 mb-6">Selecciona la clasificación que mejor se asemeje a tu textura natural.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="rizo" value="wavy" class="mt-1.5 accent-danais-teal h-5 w-5" checked>
+              <div>
+                <span class="font-semibold text-base block text-danais-tealDark">🌊 Ondulado (Tipo 2A / 2B / 2C)</span>
+                <span class="text-xs text-gray-500">Patrón en "S" ligera o definida. Raíces planas, pierde definición o volumen fácilmente con productos pesados.</span>
+              </div>
+            </label>
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="rizo" value="curly" class="mt-1.5 accent-danais-teal h-5 w-5">
+              <div>
+                <span class="font-semibold text-base block text-danais-tealDark">🌀 Rizado (Tipo 3A / 3B / 3C)</span>
+                <span class="text-xs text-gray-500">Bucles bien definidos, espirales tridimensionales o sacacorchos. Muy propenso al frizz.</span>
+              </div>
+            </label>
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="rizo" value="coily" class="mt-1.5 accent-danais-teal h-5 w-5">
+              <div>
+                <span class="font-semibold text-base block text-danais-tealDark">👑 Afro / Muy Rizado (Tipo 4A / 4B / 4C)</span>
+                <span class="text-xs text-gray-500">Espirales súper cerradas en "Z", zig-zag o algodón. Alto encogimiento, tacto seco y fragilidad.</span>
+              </div>
+            </label>
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="rizo" value="transition" class="mt-1.5 accent-danais-teal h-5 w-5">
+              <div>
+                <span class="font-semibold text-base block text-danais-tealDark">🚧 En Transición</span>
+                <span class="text-xs text-gray-500">Dos texturas conviviendo debido al crecimiento natural sobre zonas lisas tratadas con calor o química.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- PASO 2: POROSIDAD -->
+        <div id="question-step-2" class="quiz-step hidden">
+          <h2 class="font-serif text-2xl md:text-3xl text-danais-tealDark mb-2">2. ¿Cómo responde tu cabello a la hidratación? (Porosidad)</h2>
+          <p class="text-sm text-gray-500 mb-6">Basado en el test del vaso de agua o tu velocidad de secado habitual.</p>
+          <div class="grid grid-cols-1 gap-4">
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="porosidad" value="low" class="mt-1.5 accent-danais-teal h-5 w-5" checked>
+              <div>
+                <span class="font-semibold text-base block text-danais-tealDark">⬆️ Porosidad Baja (Flota / Cuesta mojarlo)</span>
+                <span class="text-xs text-gray-500">Cutícula muy cerrada. Los productos pesados se acumulan y el pelo tarda horas en secarse por completo.</span>
+              </div>
+            </label>
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="porosidad" value="mid" class="mt-1.5 accent-danais-teal h-5 w-5">
+              <div>
+                <span class="font-semibold text-base block text-danais-tealDark">↔️ Porosidad Media (Equilibrada)</span>
+                <span class="text-xs text-gray-500">Cabello saludable, absorbe y retiene la hidratación de manera balanceada y natural.</span>
+              </div>
+            </label>
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="porosidad" value="high" class="mt-1.5 accent-danais-teal h-5 w-5">
+              <div>
+                <span class="font-semibold text-base block text-danais-tealDark">⬇️ Porosidad Alta (Se hunde / Secado ultra veloz)</span>
+                <span class="text-xs text-gray-500">Cutícula muy abierta o dañada. Absorbe agua rápido pero queda seco, poroso y con frizz al instante.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- PASO 3: CANAS -->
+        <div id="question-step-3" class="quiz-step hidden">
+          <h2 class="font-serif text-2xl md:text-3xl text-danais-tealDark mb-2">3. ¿Cómo manejas o cuidas tus canas actualmente?</h2>
+          <p class="text-sm text-gray-500 mb-6">El cabello con canas requiere cuidados específicos de humectación y protección.</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex flex-col items-center text-center cursor-pointer transition-all">
+              <input type="radio" name="canas" value="none" class="mb-3 accent-danais-teal h-5 w-5" checked>
+              <span class="font-semibold text-base block text-danais-tealDark mb-1">No tengo canas</span>
+              <span class="text-xs text-gray-500">No necesito tratamiento de cobertura o un plus de brillo para canas.</span>
+            </label>
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex flex-col items-center text-center cursor-pointer transition-all">
+              <input type="radio" name="canas" value="care" class="mb-3 accent-danais-teal h-5 w-5">
+              <span class="font-semibold text-base block text-danais-tealDark mb-1">Tengo y quiero lucirlas</span>
+              <span class="text-xs text-gray-500">Busco mantenerlas suaves, nutridas y con brillo natural libre de tonos amarillentos.</span>
+            </label>
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex flex-col items-center text-center cursor-pointer transition-all">
+              <input type="radio" name="canas" value="cover" class="mb-3 accent-danais-teal h-5 w-5">
+              <span class="font-semibold text-base block text-danais-tealDark mb-1">Quiero cubrirlas</span>
+              <span class="text-xs text-gray-500">Busco cubrirlas naturalmente sin químicos abrasivos o coloración sintética.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- PASO 4: ESTILO DESEADO -->
+        <div id="question-step-4" class="quiz-step hidden">
+          <h2 class="font-serif text-2xl md:text-3xl text-danais-tealDark mb-2">4. ¿Cuál es tu objetivo o estilo favorito para el día a día?</h2>
+          <p class="text-sm text-gray-500 mb-6">La forma en que estilices determina los tipos de productos y texturas idóneas.</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex flex-col items-center text-center cursor-pointer transition-all">
+              <input type="radio" name="estilo" value="volume" class="mb-3 accent-danais-teal h-5 w-5" checked>
+              <span class="font-semibold text-base block text-danais-tealDark mb-1">Mucho Volumen</span>
+              <span class="text-xs text-gray-500">Prefiero melenas ligeras, con movimiento y esponjosidad natural de las ondas.</span>
+            </label>
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex flex-col items-center text-center cursor-pointer transition-all">
+              <input type="radio" name="estilo" value="definition" class="mb-3 accent-danais-teal h-5 w-5">
+              <span class="font-semibold text-base block text-danais-tealDark mb-1">Mucha Definición</span>
+              <span class="text-xs text-gray-500">Prefiero rizos súper esculpidos, sin frizz y que duren perfectos varios días.</span>
+            </label>
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex flex-col items-center text-center cursor-pointer transition-all">
+              <input type="radio" name="estilo" value="afro" class="mb-3 accent-danais-teal h-5 w-5">
+              <span class="font-semibold text-base block text-danais-tealDark mb-1">Volumen Afro</span>
+              <span class="text-xs text-gray-500">Quiero potenciar la redondez, densidad e imponencia de mi afro natural.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- PASO 5: CANTIDAD DE PRODUCTOS -->
+        <div id="question-step-5" class="quiz-step hidden">
+          <h2 class="font-serif text-2xl md:text-3xl text-danais-tealDark mb-2">5. ¿Qué tan completa prefieres tu rutina capilar?</h2>
+          <p class="text-sm text-gray-500 mb-6">Diseñaremos la rutina en función del tiempo que desees dedicarle.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="rutina" value="express" class="mt-1.5 accent-danais-teal h-5 w-5" checked>
+              <div>
+                <span class="font-semibold text-base block text-danais-tealDark">⚡ Rutina Express (Práctica y minimalista)</span>
+                <span class="text-xs text-gray-500">Máximo 1 o 2 productos básicos. Busco practicidad sin perder el cuidado capilar.</span>
+              </div>
+            </label>
+            <label class="border-2 border-danais-beigeDark hover:border-danais-teal hover:bg-danais-tealLight/30 rounded-2xl p-4 flex items-start gap-4 cursor-pointer transition-all">
+              <input type="radio" name="rutina" value="complete" class="mt-1.5 accent-danais-teal h-5 w-5">
+              <div>
+                <span class="font-semibold text-base block text-danais-tealDark">🍃 Rutina Completa o Línea de Tratamiento</span>
+                <span class="text-xs text-gray-500">3 productos o más. Disfruto de la preparación, técnicas de estilizado avanzadas y cuidado intensivo.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- PASO 6: DENSIDAD / DETALLES -->
+        <div id="question-step-6" class="quiz-step hidden">
+          <h2 class="font-serif text-2xl md:text-3xl text-danais-tealDark mb-2">6. Por último, ¿cómo calificarías tu volumen y el frizz?</h2>
+          <p class="text-sm text-gray-500 mb-6">Información extra para calibrar los lípidos protectores.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <span class="font-semibold text-sm text-danais-tealDark block mb-2">Densidad Capilar</span>
+              <select id="select-densidad" class="w-full bg-danais-beige border border-danais-beigeDark rounded-xl p-3 text-sm focus:outline-none focus:border-danais-teal">
+                <option value="low">Baja (Cabello fino, se ve fácil el cuero cabelludo)</option>
+                <option value="mid" selected>Media (Volumen regular equilibrado)</option>
+                <option value="high">Alta (Mucha cantidad, cuero cabelludo oculto)</option>
+              </select>
+            </div>
+            <div>
+              <span class="font-semibold text-sm text-danais-tealDark block mb-2">Frizz o Encrespamiento</span>
+              <select id="select-frizz" class="w-full bg-danais-beige border border-danais-beigeDark rounded-xl p-3 text-sm focus:outline-none focus:border-danais-teal">
+                <option value="low">Bajo / Controlado habitualmente</option>
+                <option value="mid" selected>Moderado (Aparece con humedad ambiental)</option>
+                <option value="high">Alto / Constante (Halo de pelitos rebeldes)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="flex justify-between items-center mt-10 pt-6 border-t border-danais-beigeDark">
+        <button id="prev-btn" onclick="prevStep()" class="hidden text-danais-teal hover:text-danais-tealDark font-semibold flex items-center gap-2 px-4 py-2">
+          <i class="fa-solid fa-arrow-left"></i> Anterior
+        </button>
+        <span class="flex-grow"></span>
+        <button id="next-btn" onclick="nextStep()" class="bg-danais-teal hover:bg-danais-tealDark text-white font-semibold py-3 px-8 rounded-full shadow-md transition-all flex items-center gap-2">
+          Siguiente <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- PANTALLA DE RESULTADOS -->
+    <div id="results-screen" class="hidden">
+      
+      <!-- Banner Principal -->
+      <div class="bg-gradient-to-br from-danais-teal to-danais-tealDark rounded-3xl p-6 md:p-10 text-white shadow-xl mb-8">
+        <span class="bg-danais-beige/20 text-danais-beige text-xs font-bold tracking-widest uppercase py-1 px-3 rounded-full mb-4 inline-block">
+          Tu Diagnóstico de Precisión
+        </span>
+        <h2 class="font-serif text-3xl md:text-5xl mb-4 leading-tight">
+          Recomendación: <span id="routine-title" class="text-danais-gold">Cargando...</span>
+        </h2>
+        <p id="routine-description" class="text-sm md:text-base text-danais-tealLight max-w-2xl leading-relaxed">
+          Explicación de las características de tu melena...
+        </p>
+      </div>
+
+      <!-- METODO DE DEFINICIÓN -->
+      <div class="bg-white rounded-3xl border border-danais-beigeDark p-6 shadow-md mb-8 flex flex-col md:flex-row gap-6 items-center">
+        <div class="md:w-1/3 flex justify-center">
+          <img id="method-img" src="assets/Cepillo-bounce-curl.jpg" alt="Estilizado" class="h-44 object-contain rounded-2xl border border-danais-beigeDark" onerror="this.src='https://placehold.co/150x200/158484/ffffff?text=Estilizado'">
+        </div>
+        <div class="md:w-2/3">
+          <h3 class="font-serif text-xl md:text-2xl text-danais-tealDark mb-2 flex items-center gap-2">
+            <i class="fa-solid fa-wand-magic-sparkles text-danais-gold"></i> Método de Estilizado Recomendado
+          </h3>
+          <p id="method-title" class="font-semibold text-danais-teal mb-2">Técnica recomendada</p>
+          <p id="method-desc" class="text-sm text-gray-600 leading-relaxed">Pasos a seguir para aplicar tu producto de peinado...</p>
+        </div>
+      </div>
+
+      <!-- Opciones Personalizadas Especiales (Pomada / Mascarilla) -->
+      <div id="custom-formulations-container" class="hidden grid grid-cols-1 gap-6 mb-8">
+        <!-- Contenedor dinámico si requiere formulación a medida -->
+      </div>
+
+      <!-- PRODUCTOS DE TU CATÁLOGO -->
+      <h3 class="font-serif text-2xl text-danais-tealDark mb-6 flex items-center gap-2">
+        <i class="fa-solid fa-bag-shopping text-danais-teal"></i> Tu Kit y Productos Recomendados
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="products-container">
+        <!-- Render dinámico -->
+      </div>
+
+      <!-- BOTÓN DE ACCIÓN FINAL -->
+      <div class="bg-white rounded-3xl border border-danais-beigeDark p-8 shadow-xl text-center mt-10 max-w-2xl mx-auto">
+        <h4 class="font-serif text-2xl text-danais-tealDark mb-3">¿Encargamos tu rutina personalizada?</h4>
+        <p class="text-gray-600 mb-6 text-sm">
+          Como creamos cosméticos artesanales y personalizados, podemos afinar los ingredientes antes de preparar tu pedido. Haz una captura de pantalla de este diagnóstico y envíanosla por WhatsApp.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a id="whatsapp-link" href="#" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full flex items-center justify-center gap-2 shadow-md transition-transform hover:scale-105">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Solicitar Rutina y Fórmulas
+          </a>
+          <a href="https://www.instagram.com/danaisnatural" target="_blank" class="bg-danais-teal hover:bg-danais-tealDark text-white font-semibold py-3 px-8 rounded-full flex items-center justify-center gap-2 shadow-md transition-transform hover:scale-105">
+            <i class="fa-brands fa-instagram text-lg"></i> Volver a Instagram
+          </a>
+        </div>
+        
+        <button onclick="resetQuiz()" class="mt-6 text-xs text-gray-400 hover:text-danais-teal underline block mx-auto font-semibold">
+          Repetir Diagnóstico
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="w-full bg-danais-charcoal text-white py-8 px-6 mt-12 border-t-2 border-danais-gold/30 text-center md:text-left">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-serif text-lg text-danais-beige">Danais Natural Cosmetics</p>
+        <p class="text-xs text-gray-400">© 2026 Cosmética Capilar Artesana y Botánica.</p>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a href="index.html" class="hover:text-danais-gold">Web Oficial</a>
+        <a href="index.html#embajadoras" class="hover:text-danais-gold">Embajadoras</a>
+        <a href="https://www.instagram.com/danaisnatural" target="_blank" class="hover:text-danais-gold">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT CON LÓGICA DE DIAGNÓSTICO -->
+  <script>
+    let currentStep = 1;
+    const totalSteps = 6;
+    const answers = {
+      rizo: 'wavy',
+      porosidad: 'low',
+      canas: 'none',
+      estilo: 'volume',
+      rutina: 'express',
+      densidad: 'mid',
+      frizz: 'mid'
+    };
+
+    function startQuiz() {
+      document.getElementById('welcome-screen').classList.add('hidden');
+      document.getElementById('quiz-container').classList.remove('hidden');
+      showStep(currentStep);
+    }
+
+    function showStep(step) {
+      document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+      document.getElementById(`question-step-${step}`).classList.remove('hidden');
+      
+      document.getElementById('step-indicator').innerText = `Paso ${step} de ${totalSteps}`;
+      const percentage = Math.round((step / totalSteps) * 100);
+      document.getElementById('progress-percentage').innerText = `${percentage}% Completado`;
+      document.getElementById('progress-bar').style.width = `${percentage}%`;
+
+      if (step === 1) {
+        document.getElementById('prev-btn').classList.add('hidden');
+      } else {
+        document.getElementById('prev-btn').classList.remove('hidden');
+      }
+
+      const nextBtn = document.getElementById('next-btn');
+      if (step === totalSteps) {
+        nextBtn.innerHTML = `Ver Resultados <i class="fa-solid fa-wand-magic-sparkles"></i>`;
+      } else {
+        nextBtn.innerHTML = `Siguiente <i class="fa-solid fa-arrow-right"></i>`;
+      }
+    }
+
+    function nextStep() {
+      saveStepAnswer(currentStep);
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        calculateResults();
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+    function saveStepAnswer(step) {
+      if (step === 1) {
+        answers.rizo = document.querySelector('input[name="rizo"]:checked').value;
+      } else if (step === 2) {
+        answers.porosidad = document.querySelector('input[name="porosidad"]:checked').value;
+      } else if (step === 3) {
+        answers.canas = document.querySelector('input[name="canas"]:checked').value;
+      } else if (step === 4) {
+        answers.estilo = document.querySelector('input[name="estilo"]:checked').value;
+      } else if (step === 5) {
+        answers.rutina = document.querySelector('input[name="rutina"]:checked').value;
+      } else if (step === 6) {
+        answers.densidad = document.getElementById('select-densidad').value;
+        answers.frizz = document.getElementById('select-frizz').value;
+      }
+    }
+
+    function calculateResults() {
+      document.getElementById('quiz-container').classList.add('hidden');
+      document.getElementById('results-screen').classList.remove('hidden');
+
+      const titleEl = document.getElementById('routine-title');
+      const descEl = document.getElementById('routine-description');
+      const methodImgEl = document.getElementById('method-img');
+      const methodTitleEl = document.getElementById('method-title');
+      const methodDescEl = document.getElementById('method-desc');
+      const customContainer = document.getElementById('custom-formulations-container');
+      const productsContainer = document.getElementById('products-container');
+
+      customContainer.innerHTML = '';
+      productsContainer.innerHTML = '';
+      customContainer.classList.add('hidden');
+
+      let routineName = "";
+      let routineDesc = "";
+      let methodTitle = "";
+      let methodDesc = "";
+      let recommendedProducts = [];
+
+      // LÓGICA DE ESTILIZADO Y CEPILLO BOUNCE CURL PARA MÁXIMA DEFINICIÓN
+      if (answers.estilo === 'definition') {
+        methodTitle = "Técnica: Fitagem Avanzada con Cepillo Bounce Curl";
+        methodDesc = "¡La técnica reina para la máxima definición! Con el cabello muy mojado, distribuye uniformemente tu crema de peinar y luego pasa el Cepillo Bounce Curl seccionando hacia afuera. El cepillo separará las hebras creando cintas perfectas y definidas libres de frizz. Al terminar, aplica tu Gel Definidora con 'scrunch' para sellar y fijar.";
+        methodImgEl.src = "assets/Cepillo-bounce-curl.jpg";
+      } else if (answers.estilo === 'volume') {
+        methodTitle = "Técnica: Pulsing & Scrunching Ligero";
+        methodDesc = "Aplica tus productos con las manos rezando de medios a puntas y realiza scrunch (apretar hacia arriba) inclinando la cabeza. Promueve la máxima contracción y ligereza de las ondas sin aportar peso excesivo en la raíz.";
+        methodImgEl.onerror = () => { methodImgEl.src = 'https://placehold.co/150x200/158484/ffffff?text=Volumen'; };
+      } else if (answers.estilo === 'afro' || answers.rizo === 'coily') {
+        methodTitle = "Técnica: Twists o Rake and Shake para volumen controlado";
+        methodDesc = "Usa tus dedos como rastrillo para distribuir la densidad del producto de manera uniforme de raíz a puntas. Para reducir el encogimiento y mantener la redondez perfecta, haz Twists (trenzas de dos cabos) húmedos que soltarás una vez estén 100% secos.";
+        methodImgEl.onerror = () => { methodImgEl.src = 'https://placehold.co/150x200/158484/ffffff?text=Afro'; };
+      } else if (answers.rizo === 'transition') {
+        methodTitle = "Técnica: Finger Coils mecánicos en puntas";
+        methodDesc = "Enfócate en la parte baja que ha perdido estructura. Con una buena capa de Gel de Burití y crema de peinar, enrolla los mechones alrededor de tus dedos mecánicamente para estimular y recuperar la memoria natural del rizo.";
+        methodImgEl.onerror = () => { methodImgEl.src = 'https://placehold.co/150x200/158484/ffffff?text=Transicion'; };
+      }
+
+      // ASIGNACIÓN DE TIPOS DE RUTINA
+      if (answers.rutina === 'complete') {
+        routineName = "Línea Completa Danais de Cuidado Botánico";
+        routineDesc = "Ideal para quienes quieren la experiencia total del autocuidado capilar artesano. Combinamos la higiene sólida equilibrada, una hidratación botánica ligera y la retención perfecta de la definición con lípidos protectores.";
+      } else if (answers.rizo === 'transition') {
+        routineName = "Rutina Reconstructiva Capilar";
+        routineDesc = "Ideal para cabellos en transición que están sanando daños mecánicos o térmicos. Buscamos restaurar la barrera con ingredientes ricos como el Karité y plantas de fuerza.";
+      } else if (answers.porosidad === 'high') {
+        routineName = "Rutina Lípido-Nutritiva de Sellado";
+        routineDesc = "Tus rizos son de porosidad alta, lo que significa que el agua se evapora fácilmente. Necesitamos capas lipídicas protectoras que mantengan la hidratación dentro.";
+      } else {
+        routineName = "Rutina de Ultra-Definición Botánica";
+        routineDesc = "Enfocada en proveer un patrón de rizo elástico, flexible, brillante y libre de frizz mediante extractos puros botánicos.";
+      }
+
+      // DIAGNÓSTICO DE ALTA COSMÉTICA PERSONALIZADA (MASCARILLA / POMADA)
+      // Porosidad Alta -> Opción de Mascarilla
+      if (answers.porosidad === 'high') {
+        customContainer.classList.remove('hidden');
+        customContainer.innerHTML += `
+          <div class="bg-amber-50 border-2 border-danais-gold/30 rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-center shadow-sm">
+            <div class="h-14 w-14 rounded-full bg-danais-gold text-white flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-mortar-pestle text-2xl"></i>
+            </div>
+            <div>
+              <h4 class="font-serif text-lg text-danais-tealDark font-bold mb-1">¡Fórmula Recomendada: Mascarilla Personalizada de Reparación Total!</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Al tener <strong>Porosidad Alta</strong>, tus cutículas necesitan un baño intensivo de aminoácidos y proteínas que repare la microestructura dañada. Crearemos tu mascarilla artesanal con dosis optimizadas de activos de Nopal y Karité. ¡Agrégala en tu consulta personalizada!
+              </p>
+            </div>
+          </div>
+        `;
+      }
+
+      // Cabello Afro (Tipo 4) -> Opción de Pomada
+      if (answers.rizo === 'coily') {
+        customContainer.classList.remove('hidden');
+        customContainer.innerHTML += `
+          <div class="bg-amber-50 border-2 border-danais-gold/30 rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-center shadow-sm">
+            <div class="h-14 w-14 rounded-full bg-danais-gold text-white flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-sparkles text-2xl"></i>
+            </div>
+            <div>
+              <h4 class="font-serif text-lg text-danais-tealDark font-bold mb-1">¡Exclusivo Tipo 4: Pomada Personalizada para Control Extremo!</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                El cabello afro requiere una barrera lípida densa para evitar la evaporación de agua. Podemos prepararte una <strong>Pomada con ingredientes botánicos personalizados</strong> (Karité puro, Ricino y extractos botánicos densos) diseñada específicamente para maximizar tu brillo y darte un control de encogimiento sin igual.
+              </p>
+            </div>
+          </div>
+        `;
+      }
+
+      // SI QUIERE CUBRIR CANAS -> Agrega Coloración Vegetal de inmediato
+      if (answers.canas === 'cover') {
+        recommendedProducts.push({
+          title: "Coloración Vegetal Cobrizo Tierra",
+          img: "assets/Coloracion-Vegetal-editada.jpg",
+          desc: "Fórmula 100% natural a base de plantas molidas (Henna, Cassia, Neem). Engrosa la hebra capilar mientras cubre las canas aportando un tono cobrizo natural de ensueño.",
+          tag: "Tratamiento de Canas"
+        });
+      }
+
+      // ASIGNACIÓN DE LOS KITS ESTRELLA SEGÚN RUTINA SELECCIONADA
+      if (answers.rutina === 'complete') {
+        // RECOMENDACIÓN DE LA LÍNEA COMPLETA
+        recommendedProducts.push({
+          title: "Línea Completa Danais",
+          img: "assets/Linea-completa.jpg",
+          desc: "La experiencia total de nutrición, higiene sólida consciente, definición y sellado con aceites botánicos. Incluye Champú, Acondicionador Sólido, Crema de peinar, Gel definidora y Óleo Multiuso.",
+          tag: "Línea Completa"
+        });
+
+        // RECOMENDACIÓN DE KIT DE DEFINICIÓN + CEPILLO BOUNCE CURL
+        recommendedProducts.push({
+          title: "Kit Definición de Rizos",
+          img: "assets/Kit-definicion-de-rizos-.jpg",
+          desc: "El trío dinámico botánico para estructurar y fijar tus rizos: Crema de peinar, Gel definidora con Burití y el Óleo Multiuso para un acabado brillante sin efecto acartonado.",
+          tag: "Fijación y Sello"
+        });
+
+        recommendedProducts.push({
+          title: "Cepillo Especial Bounce Curl",
+          img: "assets/Cepillo-bounce-curl.jpg",
+          desc: "Herramienta ergonómica diseñada para agrupar el cabello húmedo en cintas elásticas uniformes, promoviendo la máxima definición sin frizz.",
+          tag: "Estilizado Técnico"
+        });
+
+      } else {
+        // RUTINA EXPRESS - RECOMENDACIONES PRECISAS MÁS CORTAS
+        if (answers.estilo === 'definition') {
+          recommendedProducts.push({
+            title: "Kit Definición de Rizos",
+            img: "assets/Kit-definicion-de-rizos-.jpg",
+            desc: "Ideal para lograr rizos elásticos con tan solo aplicar la Crema, Gel de Burití y unas gotas de Óleo para suavizar.",
+            tag: "Kit de Definición"
+          });
+        } else if (answers.rizo === 'wavy' || answers.densidad === 'low') {
+          recommendedProducts.push({
+            title: "Crema de Peinar Botánica (Nopal & Babassu)",
+            img: "assets/crema-de-peinar-ediada.jpg",
+            desc: "Nutrición sumamente ligera que define tus ondas e hidrata sin restar volumen ni aportar peso residual.",
+            tag: "Estilizado Diario"
+          });
+        } else {
+          recommendedProducts.push({
+            title: "Kit Champú y Acondicionador Sólido",
+            img: "assets/Kit-Shampoo-y-Acondicionador-Solido-editado.jpg",
+            desc: "Limpia profundamente y desenreda en la ducha de manera gentil sin generar acumulación o peso.",
+            tag: "Higiene Esencial"
+          });
+        }
+
+        if (answers.canas === 'care' || answers.porosidad === 'high') {
+          recommendedProducts.push({
+            title: "Óleo Multiuso Orgánico",
+            img: "assets/Oleo-Multiuso-Editado.jpg",
+            desc: "Elixir puro que suaviza tus hebras rígidas y canas rebeldes, protegiendo las puntas de la resequedad.",
+            tag: "Brillo & Nutrición"
+          });
+        }
+      }
+
+      // Render de los productos en pantalla
+      recommendedProducts.forEach(prod => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl border border-danais-beigeDark overflow-hidden shadow-md flex flex-col sm:flex-row h-full group transition-all hover:shadow-lg";
+        card.innerHTML = `
+          <div class="sm:w-2/5 overflow-hidden h-44 sm:h-auto relative bg-danais-beige flex items-center justify-center p-4">
+            <img src="${prod.img}" alt="${prod.title}" class="max-h-36 object-contain group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/150x150/158484/ffffff?text=${encodeURIComponent(prod.title)}'">
+            <span class="absolute top-2 left-2 bg-danais-tealDark text-white text-[9px] font-bold uppercase tracking-wider py-1 px-2.5 rounded-full">
+              ${prod.tag}
+            </span>
+          </div>
+          <div class="sm:w-3/5 p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-serif text-base md:text-lg text-danais-tealDark mb-2">${prod.title}</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">${prod.desc}</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-danais-beige text-[10px] text-danais-teal font-semibold">
+              <i class="fa-solid fa-check"></i> Libre de Siliconas, Sulfatos y Parabenos
+            </div>
+          </div>
+        `;
+        productsContainer.appendChild(card);
+      });
+
+      titleEl.innerText = routineName;
+      descEl.innerText = routineDesc;
+      methodTitleEl.innerText = methodTitle;
+      methodDescEl.innerText = methodDesc;
+
+      // Actualizar enlace de WhatsApp con el mensaje personalizado de los resultados del test
+      const whatsappBaseUrl = "https://wa.me/34624702715"; // Cambiar por tu número real
+      const messageText = `¡Hola Danais! He realizado mi test capilar y mi resultado es: *${routineName}*.\n\nRespuestas clave:\n- Patrón: ${answers.rizo}\n- Porosidad: ${answers.porosidad}\n- Canas: ${answers.canas}\n- Estilo deseado: ${answers.estilo}\n- Tipo de rutina: ${answers.rutina}\n\nMe gustaría encargar mis productos y mis fórmulas personalizadas. ¡Gracias!`;
+      document.getElementById('whatsapp-link').href = `${whatsappBaseUrl}?text=${encodeURIComponent(messageText)}`;
+    }
+
+    function resetQuiz() {
+      currentStep = 1;
+      document.getElementById('results-screen').classList.add('hidden');
+      document.getElementById('welcome-screen').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

@@ -686,8 +686,8 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
       <div class="emb-tiers rev">
         <div class="emb-tier">
           <div class="emb-tier-info">
-            <h4>🌿 Inscripción anual · 100 €</h4>
-            <p>Una sola cuota al año. Incluye kit de bienvenida, fichas de uso y formación directa con Mariela.</p>
+            <h4>🌿 Escríbenos y fórmate</h4>
+            <p>Cuéntanos quién eres y te formamos directamente con Mariela: productos, técnicas y fichas de uso para empezar a vender.</p>
           </div>
           <span class="emb-tier-arrow">Únete</span>
         </div>
@@ -706,7 +706,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
           <span class="emb-tier-arrow">Crece</span>
         </div>
         <div class="emb-note">
-          <p>Sin stock a consignación · Sin permanencia más allá del año · Orientación directa con Mariela</p>
+          <p>Sin stock a consignación · Sin permanencia · Formación y orientación directa con Mariela</p>
         </div>
       </div>
     </div>
@@ -726,8 +726,8 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
           <p style="font-size:.85rem;color:var(--gr);font-style:normal;margin-top:.5rem">— Mariela Andrade, fundadora</p>
         </div>
         <div class="hist-body">
-          <p>Danais nació en 2017 en Ciudad de Panamá con ingredientes de la región: linaza, coco, mango, menta, karité y burití. Una cosmética artesanal pensada para los rizos tropicales, con fórmulas que respetan el cabello y honran la biodiversidad local.</p>
-          <p>En 2024 las fórmulas cruzan el Atlántico. Producción desde el <strong>Obrador de Acate en Deltebre</strong>. Talleres y formaciones en <strong>Mont-roig del Camp, Tarragona</strong>. Los activos del Caribe se fusionan con nopal, romero, caléndula y oliva virgen del Mediterráneo. La esencia botánica, intacta.</p>
+          <p>Danais nació en 2017 en Ciudad de Panamá con la <strong>linaza</strong>, el ingrediente con el que todo empezó, junto a otros activos de la región: coco, mango, menta y karité. Una cosmética artesanal pensada para los rizos tropicales, con fórmulas que respetan el cabello y honran la biodiversidad local.</p>
+          <p>En 2024 las fórmulas cruzan el Atlántico. Producción desde el <strong>Obrador de Cosmética Artesanal de ACATE en Deltebre</strong> — la Associació de Cosmètica Artesana de les Terres de l'Ebre, una comunidad de mujeres artesanas que preserva y dignifica la tradición de la cosmética natural. Talleres y formaciones en <strong>Mont-roig del Camp, Tarragona</strong>. Los activos del Caribe se fusionan con nopal, romero, caléndula y oliva virgen del Mediterráneo. La esencia botánica, intacta.</p>
         </div>
         <div class="hist-dates">
           <div class="hist-date-card">
@@ -745,14 +745,14 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
         <div class="hist-origin-card">
           <div class="flag">🌴 Caribe · Panamá</div>
           <h4>Activos de origen</h4>
-          <p>Linaza · Coco · Mango · Menta · Karité · Burití</p>
+          <p>Linaza · Coco · Mango · Menta · Karité</p>
         </div>
         <div class="hist-fusion">⟷ &nbsp; FUSIÓN BOTÁNICA &nbsp; ⟷</div>
         <div class="hist-origin-card">
           <div class="flag">🫒 Mediterráneo · Catalunya</div>
           <h4>Activos de adopción</h4>
           <p>Nopal · Romero · Caléndula · Oliva virgen</p>
-          <p style="font-size:.78rem;color:var(--vm);margin-top:.6rem;font-weight:500">Obrador de Acate · Deltebre<br>Talleres · Mont-roig del Camp, Tarragona</p>
+          <p style="font-size:.78rem;color:var(--vm);margin-top:.6rem;font-weight:500">Obrador de Cosmética Artesanal · ACATE · Deltebre<br>Talleres · Mont-roig del Camp, Tarragona</p>
         </div>
       </div>
     </div>
@@ -1214,7 +1214,7 @@ document.getElementById('embajadora-form').addEventListener('submit', function(e
   const ciudad = document.getElementById('emb-ciudad').value.trim();
   const rgpd = document.getElementById('emb-rgpd').checked;
   if (!nombre || !tel || !rgpd) { alert('Por favor completa tu nombre, teléfono y acepta la política de privacidad.'); return; }
-  const msg = `¡Hola Danais! Quiero inscribirme como EMBAJADORA DANAIS (100 €/año · 30% dto. en productos · 20% comisión en talleres).\n\n• Nombre: ${nombre}\n• Teléfono: ${tel}\n• Ciudad/Zona: ${ciudad || 'Sin especificar'}\n\n¿Cómo formalizo la inscripción?`;
+  const msg = `¡Hola Danais! Quiero ser EMBAJADORA DANAIS (30% dto. en productos · 20% comisión en talleres).\n\n• Nombre: ${nombre}\n• Teléfono: ${tel}\n• Ciudad/Zona: ${ciudad || 'Sin especificar'}\n\n¿Cómo empiezo mi formación?`;
   window.open(`https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`, '_blank');
   this.reset();
   alert('¡Solicitud enviada! Se abrirá WhatsApp para confirmar tu inscripción con Mariela.');

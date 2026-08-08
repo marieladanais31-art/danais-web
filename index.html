@@ -184,6 +184,15 @@ p{line-height:1.7;color:var(--gr)}
 .ing-card-body h4{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .ing-card-body .origin{font-size:.75rem;color:var(--do);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
 
+/* ── EXPERIENCIAS: ZONA Y TARIFAS ── */
+.exp-zona{max-width:46rem;margin:0 auto 1.75rem;text-align:center;font-size:.98rem;line-height:1.7}
+.exp-tarifas{list-style:none;margin:0 auto 1rem;padding:0;max-width:44rem;display:grid;gap:.5rem}
+.exp-tarifas li{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;padding:.7rem .9rem;border:1px solid rgba(0,0,0,.09);border-radius:10px;background:rgba(255,255,255,.55)}
+.exp-tarifas li span{flex:1 1 12rem;font-size:.95rem}
+.exp-tarifas li strong{font-size:1rem;white-space:nowrap}
+.exp-tarifas li small{flex-basis:100%;opacity:.7;font-size:.8rem}
+.exp-tarifas-nota{max-width:44rem;margin:0 auto 2rem;text-align:center;font-size:.82rem;opacity:.75;line-height:1.6}
+
 /* ── PREVENTA ── */
 .preventa-bg{background:var(--vp)}
 .preventa-bg .section-header h2,.preventa-bg .section-header p,.preventa-bg .section-header .eyebrow{color:#fff}
@@ -397,13 +406,13 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
   </a>
   <div class="nav-links" id="nav-links">
     <a href="#inicio">Inicio</a>
+    <a href="#experiencias">Talleres</a>
     <a href="#productos">Productos</a>
     <a href="#ingredientes">Ingredientes</a>
     <a href="#enciclopedia">Enciclopedia</a>
-    <a href="experiencias/">Experiencias</a>
     <a href="diagnostico.html">Diagnóstico</a>
     <a href="#embajadoras">Embajadoras</a>
-    <a href="#preventa" class="nav-cta">Reservar</a>
+    <a href="experiencias/" class="nav-cta">Reservar taller</a>
   </div>
   <button class="nav-burger" aria-label="Menú" id="nav-burger">
     <span></span><span></span><span></span>
@@ -417,12 +426,12 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
   </video>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-text rev">
-    <span class="eyebrow section-label">Terres de l'Ebre · Catalunya · Cosmética Botánica</span>
-    <h1>Rizos que<br><em>respiran libre</em></h1>
-    <p>Fórmulas botánicas artesanales. Sin sulfatos, sin siliconas, sin compromiso. Para el rizo que eres.</p>
+    <span class="eyebrow section-label">Barcelona · Tarragona · Terres de l'Ebre · Cosmética Botánica</span>
+    <h1>Crea tu cosmética<br><em>con tus manos</em></h1>
+    <p>Talleres y experiencias botánicas para empresas, hoteles, celebraciones y grupos. Aprendes, elaboras y te llevas tu propia creación.</p>
     <div class="hero-btns">
-      <a href="#productos" class="btn btn-gold">Ver productos</a>
-      <a href="diagnostico.html" class="btn btn-outline">Diagnóstico capilar gratis</a>
+      <a href="experiencias/" class="btn btn-gold">Reservar un taller</a>
+      <a href="#experiencias" class="btn btn-outline">Ver experiencias</a>
     </div>
   </div>
 </section>
@@ -449,6 +458,53 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
   </div>
 </div>
 
+<!-- ═══════════════════════════════ EXPERIENCIAS DANAIS ═══════════════════════════════ -->
+<section class="section exp-home" id="experiencias" aria-label="Experiencias Danais">
+  <div class="section-inner">
+    <div class="section-header rev">
+      <span class="eyebrow section-label">Experiencias Danais</span>
+      <h2>Experiencias Danais</h2>
+      <p>Talleres botánicos mediterráneos para cumpleaños, empresas, asociaciones, ferias y grupos privados.</p>
+    </div>
+    <p class="exp-home-lead rev">Creamos experiencias de cosmética natural, cuidado capilar y bienestar para aprender, compartir y llevarte una creación personalizada. Una propuesta práctica, sensorial y memorable con el sello natural de Danais.</p>
+    <p class="exp-zona rev"><strong>Dónde vamos:</strong> Barcelona y provincia de Tarragona — Reus, Salou, Cambrils, Miami Platja, Hospitalet de l'Infant y toda la Costa Daurada hasta Vinaròs. Fuera de esa zona, consúltanos.</p>
+    <ul class="exp-tarifas rev" aria-label="Tarifas orientativas">
+      <li><span>Empresas y team building</span><strong>desde 42 € / persona</strong></li>
+      <li><span>Cumpleaños y grupos</span><strong>desde 35 € / persona</strong><small>mínimo 8 participantes</small></li>
+      <li><span>Despedidas y eventos privados</span><strong>desde 40 € / persona</strong></li>
+      <li><span>Hoteles y turismo</span><strong>desde 450 € / grupo</strong></li>
+    </ul>
+    <p class="exp-tarifas-nota rev">Precios orientativos. El presupuesto final depende del taller elegido, el número de participantes, los materiales, el desplazamiento y los extras.</p>
+    <figure class="exp-home-figure rev">
+      <a href="experiencias/" aria-label="Ver Experiencias Danais">
+        <img src="assets/experiencias/experiencias-cuadrada.jpg" alt="Experiencias botánicas a medida: talleres de cosmética natural Danais para grupos" loading="lazy" onerror="this.closest('.exp-home-figure').remove()">
+      </a>
+    </figure>
+    <div class="exp-home-grid">
+      <div class="exp-card rev">
+        <div class="exp-ic">🎉</div>
+        <h4>Cumpleaños y celebraciones</h4>
+        <p>Actividades creativas y bonitas para grupos que buscan una experiencia diferente.</p>
+      </div>
+      <div class="exp-card rev">
+        <div class="exp-ic">🌿</div>
+        <h4>Empresas y bienestar</h4>
+        <p>Pausas botánicas, team building y experiencias wellness para equipos.</p>
+      </div>
+      <div class="exp-card rev">
+        <div class="exp-ic">🧴</div>
+        <h4>Talleres de cosmética natural</h4>
+        <p>Macerados, ungüentos, aromaterapia, sales de baño, mascarillas y cosmética capilar.</p>
+      </div>
+    </div>
+    <div class="exp-home-cta rev">
+      <a href="experiencias/" class="btn btn-teal">Ver experiencias</a>
+      <a href="docs/experiencias-danais-dossier.pdf" target="_blank" rel="noopener" class="btn btn-outline-dark">Descargar dossier</a>
+      <a href="https://wa.me/34624702715?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20Experiencias%20Danais%20para%20un%20grupo." target="_blank" rel="noopener" class="btn btn-wa">Consultar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════════════════ PRODUCTOS ═══════════════════════════════ -->
 <section class="section products-bg" id="productos">
   <div class="section-inner">
@@ -470,7 +526,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
         <!-- Kit de Lavado -->
         <div class="prod-card" data-product="kit-lavado" role="button" tabindex="0" aria-label="Ver Kit de Lavado">
           <div class="prod-card-img">
-            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <span class="preventa-badge">Próximamente · Lista de espera</span>
             <img src="assets/Kit-Shampoo-y-Acondicionador-Solido-editado.jpg" alt="Kit de Lavado — Shampoo y Acondicionador Sólido">
           </div>
           <div class="prod-card-body">
@@ -482,7 +538,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
         <!-- Kit de Definición -->
         <div class="prod-card" data-product="kit-definicion" role="button" tabindex="0" aria-label="Ver Kit de Definición">
           <div class="prod-card-img contain-img" style="background:var(--crema)">
-            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <span class="preventa-badge">Próximamente · Lista de espera</span>
             <img src="assets/Kit-definicion-de-rizos-.jpg" alt="Kit de Definición de Rizos">
           </div>
           <div class="prod-card-body">
@@ -499,7 +555,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
       <div class="prod-grid">
         <div class="prod-card" data-product="shampoo" role="button" tabindex="0">
           <div class="prod-card-img">
-            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <span class="preventa-badge">Próximamente · Lista de espera</span>
             <img src="assets/shampoo-solido-editado.jpg" alt="Shampoo Sólido Equilibrante">
           </div>
           <div class="prod-card-body">
@@ -510,7 +566,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
         </div>
         <div class="prod-card" data-product="acondicionador" role="button" tabindex="0">
           <div class="prod-card-img">
-            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <span class="preventa-badge">Próximamente · Lista de espera</span>
             <img src="assets/Acondicionador-solido-editado.jpg" alt="Acondicionador Sólido Desenredante">
           </div>
           <div class="prod-card-body">
@@ -521,7 +577,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
         </div>
         <div class="prod-card" data-product="crema" role="button" tabindex="0">
           <div class="prod-card-img">
-            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <span class="preventa-badge">Próximamente · Lista de espera</span>
             <img src="assets/crema-de-peinar-ediada.jpg" alt="Crema de Peinar Vegetal">
           </div>
           <div class="prod-card-body">
@@ -532,7 +588,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
         </div>
         <div class="prod-card" data-product="gel" role="button" tabindex="0">
           <div class="prod-card-img">
-            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <span class="preventa-badge">Próximamente · Lista de espera</span>
             <img src="assets/Gel-Definidora-con-Buriti.jpg" alt="Gel Definidora Vegetal">
           </div>
           <div class="prod-card-body">
@@ -543,7 +599,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
         </div>
         <div class="prod-card" data-product="oleo" role="button" tabindex="0">
           <div class="prod-card-img">
-            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <span class="preventa-badge">Próximamente · Lista de espera</span>
             <img src="assets/Oleo-Multiuso-Editado.jpg" alt="Óleo Multiuso">
           </div>
           <div class="prod-card-body">
@@ -554,7 +610,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
         </div>
         <div class="prod-card" data-product="cobrizo" role="button" tabindex="0">
           <div class="prod-card-img">
-            <span class="preventa-badge">Preventa · Septiembre 2026</span>
+            <span class="preventa-badge">Próximamente · Lista de espera</span>
             <img src="assets/Coloracion-Vegetal-editada.jpg" alt="Cobrizo Tierra — Baño de Color">
           </div>
           <div class="prod-card-body">
@@ -662,9 +718,9 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
 <section class="section preventa-bg" id="preventa">
   <div class="section-inner">
     <div class="section-header rev">
-      <span class="eyebrow section-label">Lanzamiento España · Septiembre 2026</span>
-      <h2>Reserva ahora con descuento especial</h2>
-      <p>Sé de las primeras en tener acceso. Sin cargo ahora — te avisamos cuando esté listo.</p>
+      <span class="eyebrow section-label">Línea de producto España · Próximo lanzamiento</span>
+      <h2>Apúntate a la lista de espera</h2>
+      <p>La línea de cosmética de España está terminando sus últimos ensayos de estabilidad y compatibilidad. Todavía no está a la venta: déjanos tu correo y serás de las primeras en saber cuándo lo está. No se realiza ningún cobro.</p>
     </div>
     <div class="preventa-form-wrap rev">
       <form id="preventa-form" novalidate>
@@ -677,7 +733,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
           <input type="email" id="prev-email" name="email" placeholder="tu@correo.com" required>
         </div>
         <div class="form-group">
-          <label for="prev-producto">Producto de interés</label>
+          <label for="prev-producto">Producto que te interesa</label>
           <select id="prev-producto" name="producto">
             <option value="">— Elige un producto o kit —</option>
             <option>Kit de Lavado</option>
@@ -695,12 +751,12 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
           <input type="checkbox" id="rgpd" name="rgpd" required>
           <label for="rgpd">Acepto que Danais Natural Cosmetics trate mis datos para informarme sobre el lanzamiento y enviarme comunicaciones relacionadas, de acuerdo con la <a href="#" onclick="openLegal('privacidad');return false">Política de Privacidad</a>. Puedo revocar este consentimiento en cualquier momento.</label>
         </div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Reservar mi plaza</button>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Avisadme del lanzamiento</button>
       </form>
       <div class="form-success" id="form-success">
         <div style="font-size:2.5rem">✓</div>
-        <h3 style="color:#fff;margin:.5rem 0">¡Reserva confirmada!</h3>
-        <p>Te escribiremos en cuanto el lanzamiento esté listo. Gracias por confiar en Danais.</p>
+        <h3 style="color:#fff;margin:.5rem 0">¡Estás en la lista!</h3>
+        <p>Te escribiremos en cuanto la línea esté disponible. Gracias por confiar en Danais.</p>
       </div>
     </div>
   </div>
@@ -919,45 +975,6 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
   </div>
 </section>
 
-<!-- ═══════════════════════════════ EXPERIENCIAS DANAIS ═══════════════════════════════ -->
-<section class="section exp-home" id="experiencias" aria-label="Experiencias Danais">
-  <div class="section-inner">
-    <div class="section-header rev">
-      <span class="eyebrow section-label">Experiencias Danais</span>
-      <h2>Experiencias Danais</h2>
-      <p>Talleres botánicos mediterráneos para cumpleaños, empresas, asociaciones, ferias y grupos privados.</p>
-    </div>
-    <p class="exp-home-lead rev">Creamos experiencias de cosmética natural, cuidado capilar y bienestar para aprender, compartir y llevarte una creación personalizada. Una propuesta práctica, sensorial y memorable con el sello natural de Danais.</p>
-    <figure class="exp-home-figure rev">
-      <a href="experiencias/" aria-label="Ver Experiencias Danais">
-        <img src="assets/experiencias/experiencias-cuadrada.jpg" alt="Experiencias botánicas a medida: talleres de cosmética natural Danais para grupos" loading="lazy" onerror="this.closest('.exp-home-figure').remove()">
-      </a>
-    </figure>
-    <div class="exp-home-grid">
-      <div class="exp-card rev">
-        <div class="exp-ic">🎉</div>
-        <h4>Cumpleaños y celebraciones</h4>
-        <p>Actividades creativas y bonitas para grupos que buscan una experiencia diferente.</p>
-      </div>
-      <div class="exp-card rev">
-        <div class="exp-ic">🌿</div>
-        <h4>Empresas y bienestar</h4>
-        <p>Pausas botánicas, team building y experiencias wellness para equipos.</p>
-      </div>
-      <div class="exp-card rev">
-        <div class="exp-ic">🧴</div>
-        <h4>Talleres de cosmética natural</h4>
-        <p>Macerados, ungüentos, aromaterapia, sales de baño, mascarillas y cosmética capilar.</p>
-      </div>
-    </div>
-    <div class="exp-home-cta rev">
-      <a href="experiencias/" class="btn btn-teal">Ver experiencias</a>
-      <a href="docs/experiencias-danais-dossier.pdf" target="_blank" rel="noopener" class="btn btn-outline-dark">Descargar dossier</a>
-      <a href="https://wa.me/34624702715?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20Experiencias%20Danais%20para%20un%20grupo." target="_blank" rel="noopener" class="btn btn-wa">Consultar por WhatsApp</a>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════════════════════════ CTA BAND ═══════════════════════════════ -->
 <div class="cta-band">
   <div class="cta-band-inner">
@@ -1040,7 +1057,7 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
     <button class="lm-close" onclick="closeLegal('privacidad')" aria-label="Cerrar">×</button>
     <h3 id="lm-priv-title">Política de Privacidad</h3>
     <p><strong>Responsable del tratamiento:</strong> ANDRADE APARICIO DE VIDAL MARIELA — NIF: X9473803B — Mont-roig del Camp, Tarragona, España</p>
-    <p><strong>Finalidad:</strong> Gestión de reservas de preventa, envío de información sobre el lanzamiento de productos y comunicaciones comerciales relacionadas.</p>
+    <p><strong>Finalidad:</strong> Gestión de la lista de espera, envío de información sobre el lanzamiento de productos, gestión de solicitudes de talleres y experiencias, y comunicaciones comerciales relacionadas.</p>
     <p><strong>Base jurídica:</strong> Consentimiento expreso del interesado (Art. 6.1.a RGPD).</p>
     <p><strong>Conservación:</strong> Los datos se conservarán hasta que retires el consentimiento o durante un máximo de 3 años desde la última interacción.</p>
     <p><strong>Destinatarios:</strong> No se cederán datos a terceros salvo obligación legal. Podemos utilizar proveedores de servicios de correo electrónico (encargados del tratamiento) que actúan bajo contrato de conformidad con el RGPD.</p>
@@ -1335,7 +1352,7 @@ document.getElementById('preventa-form').addEventListener('submit', function(e) 
   const producto = document.getElementById('prev-producto').value;
   const rgpd = document.getElementById('rgpd').checked;
   if (!email || !rgpd) { alert('Por favor completa el correo y acepta la política de privacidad.'); return; }
-  const msg = `¡Hola Danais! Quiero reservar en la preventa.\n\n• Nombre: ${nombre}\n• Email: ${email}\n• Producto de interés: ${producto || 'Sin especificar'}`;
+  const msg = `¡Hola Danais! Quiero entrar en la lista de espera de la línea de producto.\n\n• Nombre: ${nombre}\n• Email: ${email}\n• Producto de interés: ${producto || 'Sin especificar'}`;
   window.open(`https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`, '_blank');
   this.style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
@@ -1545,7 +1562,7 @@ const ARTICLES = {
       <p>Prelavado con Óleo Multiuso · Shampoo Sólido · mascarilla 10–20 minutos · Crema + Gel · seca al aire.</p>
       <h3>Lo más importante</h3>
       <p>La constancia importa más que la perfección. Una rutina simple que mantienes vale más que una elaborada que abandonas.</p>
-      <div class="art-cta-box"><p>Reserva tu kit de inicio Danais</p><a href="#preventa" onclick="closeArtModal()" class="btn btn-dark">Reservar en preventa</a></div>`
+      <div class="art-cta-box"><p>Avísame cuando llegue mi kit de inicio Danais</p><a href="#preventa" onclick="closeArtModal()" class="btn btn-dark">Entrar en la lista de espera</a></div>`
   }
 };
 

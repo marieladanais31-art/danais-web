@@ -200,6 +200,16 @@ footer{background:var(--vp);color:#fff;padding:4rem 3rem 2rem}
   .footer-grid{grid-template-columns:1fr}
   footer{padding:3rem 1.5rem 2rem}
 }
+
+/* Tarifas orientativas. Mismos estilos que la home: quien llega directo a
+   esta pagina tiene que ver una referencia de precio sin preguntar. */
+.exp-tarifas{list-style:none;margin:0 auto 1rem;padding:0;max-width:44rem;display:grid;gap:.5rem}
+.exp-tarifas li{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;padding:.7rem .9rem;border:1px solid rgba(0,0,0,.09);border-radius:10px;background:rgba(255,255,255,.55)}
+.exp-tarifas li span{flex:1 1 12rem;font-size:.95rem}
+.exp-tarifas li strong{font-size:1rem;white-space:nowrap}
+.exp-tarifas li small{flex-basis:100%;opacity:.7;font-size:.8rem}
+.exp-tarifas-nota{max-width:44rem;margin:0 auto 0;text-align:center;font-size:.82rem;opacity:.75;line-height:1.6}
+.exp-zona{max-width:44rem;margin:0 auto 1.5rem;text-align:center;font-size:.95rem;line-height:1.65}
 </style>
 </head>
 <body id="top" class="exp-page">
@@ -402,6 +412,24 @@ footer{background:var(--vp);color:#fff;padding:4rem 3rem 2rem}
 </section>
 
 <!-- ═══════════════════ SOLICITA TU PROPUESTA ═══════════════════ -->
+<!-- ═══════════════════ TARIFAS ORIENTATIVAS ═══════════════════ -->
+<section class="section sec-crema" aria-labelledby="tarifas-title">
+  <div class="section-inner">
+    <div class="section-header rev">
+      <span class="eyebrow section-label">Cuánto cuesta</span>
+      <h2 id="tarifas-title">Tarifas orientativas</h2>
+    </div>
+    <p class="exp-zona rev"><strong>Dónde vamos:</strong> Barcelona y provincia de Tarragona — Reus, Salou, Cambrils, Miami Platja, Hospitalet de l'Infant y toda la Costa Daurada hasta Vinaròs. Fuera de esa zona, consúltanos.</p>
+    <ul class="exp-tarifas rev" aria-label="Tarifas orientativas">
+      <li><span>Empresas y team building</span><strong>desde 42 € / persona</strong></li>
+      <li><span>Cumpleaños y grupos</span><strong>desde 35 € / persona</strong><small>mínimo 8 participantes</small></li>
+      <li><span>Despedidas y eventos privados</span><strong>desde 40 € / persona</strong></li>
+      <li><span>Hoteles y turismo</span><strong>desde 450 € / grupo</strong></li>
+    </ul>
+    <p class="exp-tarifas-nota rev">Precios orientativos. El presupuesto final depende del taller elegido, el número de participantes, los materiales, el desplazamiento y los extras.</p>
+  </div>
+</section>
+
 <section class="section solicita" id="solicita" aria-labelledby="sol-title">
   <div class="section-inner">
     <div class="section-header rev">

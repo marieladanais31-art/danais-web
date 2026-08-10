@@ -481,16 +481,22 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
   .hero-btns-3 .btn{width:100%}
 }
 
-/* El video del hero ya lleva el logo de la marca en el centro. El bloque de
-   texto se limita en ancho y se ancla abajo a la izquierda para no cruzarse
-   con el, y lleva su propio velo porque el video cambia de luminosidad. */
+/* El video del hero ya lleva el logo de la marca en el centro, asi que el
+   texto se limita en ancho y se queda a la izquierda para no cruzarse con el. */
 .hero-text{max-width:30rem}
-.hero-text::before{
-  content:"";position:absolute;inset:-2rem -3rem -2rem -2rem;z-index:-1;
-  background:radial-gradient(ellipse at 30% 60%,rgba(20,61,44,.55) 0%,rgba(20,61,44,0) 70%);
+.hero-text h1{font-size:clamp(2.6rem,5.2vw,4.2rem);line-height:1.05;text-wrap:balance}
+.hero-text .eyebrow{text-wrap:balance}
+
+/* Franja oscura a la izquierda: el titular cae sobre el mar, la zona mas clara
+   del video, y en blanco no se leia. Se oscurece solo esa columna. */
+.hero-overlay::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(16,48,36,.78) 0%,rgba(16,48,36,.55) 28%,rgba(16,48,36,.12) 48%,rgba(16,48,36,0) 62%);
   pointer-events:none;
 }
-.hero-text h1{text-wrap:balance}
+@media (max-width:900px){
+  .hero-overlay::after{background:linear-gradient(to top,rgba(16,48,36,.85) 0%,rgba(16,48,36,.35) 55%,rgba(16,48,36,0) 100%)}
+}
 @media (max-width:900px){
   .hero-text{left:1.5rem;right:1.5rem;max-width:none;bottom:8vh}
 }

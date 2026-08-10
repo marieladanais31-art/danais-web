@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Danais Natural Cosmetics — Cosmética Natural para Rizos | Método Curly y Cuidado del Rizo</title>
-<meta name="description" content="Cosmética natural artesanal para cabello rizado y método curly. Shampoo sólido sin sulfatos ni siliconas, definición de rizos y productos para el cuidado del rizo. Desde Panamá (2017) hasta Terres de l'Ebre, Costa Dorada (2024).">
+<meta name="description" content="Cosmética natural para rizos, hecha a mano en Tarragona. Sin sulfatos ni siliconas. Talleres de cosmética botánica y diagnóstico capilar gratuito.">
 <meta name="keywords" content="cosmética natural, productos para rizos, método curly, cuidado del rizo, shampoo sólido sin sulfatos, definición de rizos, acondicionador sólido, cosmética botánica, cabello rizado, sin siliconas, rutina curly, Costa Dorada, Mont-roig del Camp, Tarragona">
 <meta name="author" content="Danais Natural Cosmetics">
 <meta name="robots" content="index,follow">
@@ -29,17 +29,93 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Danais Natural Cosmetics",
-  "url": "https://www.danaisnatural.com/",
-  "logo": "https://www.danaisnatural.com/assets/danais-logo-sin-fondo.png",
-  "description": "Cosmética natural artesanal para cabello rizado y método curly. Productos para rizos sin sulfatos ni siliconas y experiencias botánicas.",
-  "email": "marieladanais31@gmail.com",
-  "areaServed": "ES",
-  "address": {"@type": "PostalAddress", "addressLocality": "Mont-roig del Camp", "addressRegion": "Tarragona", "addressCountry": "ES"},
-  "sameAs": ["https://www.instagram.com/danaisnaturalcosmetics", "https://www.facebook.com/danaisnatural"]
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Danais Natural Cosmetics",
+      "url": "https://www.danaisnatural.com/",
+      "logo": "https://www.danaisnatural.com/assets/danais-logo-sin-fondo.png",
+      "description": "Cosmética natural artesanal para cabello rizado y método curly. Productos para rizos sin sulfatos ni siliconas y experiencias botánicas.",
+      "email": "marieladanais31@gmail.com",
+      "areaServed": "ES",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mont-roig del Camp",
+        "addressRegion": "Tarragona",
+        "addressCountry": "ES"
+      },
+      "sameAs": [
+        "https://www.instagram.com/danaisnaturalcosmetics",
+        "https://www.facebook.com/danaisnatural"
+      ],
+      "@id": "https://www.danaisnatural.com/#organizacion"
+    },
+    {
+      "@type": "HealthAndBeautyBusiness",
+      "@id": "https://www.danaisnatural.com/#negocio",
+      "name": "Danais Natural Cosmetics",
+      "url": "https://www.danaisnatural.com/",
+      "image": "https://www.danaisnatural.com/assets/Linea-completa.jpg",
+      "telephone": "+34624702715",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mont-roig del Camp",
+        "addressRegion": "Tarragona",
+        "addressCountry": "ES"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Mont-roig del Camp"
+        },
+        {
+          "@type": "City",
+          "name": "Reus"
+        },
+        {
+          "@type": "City",
+          "name": "Salou"
+        },
+        {
+          "@type": "City",
+          "name": "Cambrils"
+        },
+        {
+          "@type": "City",
+          "name": "Tarragona"
+        },
+        {
+          "@type": "City",
+          "name": "Barcelona"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.danaisnatural.com/#talleres",
+      "name": "Talleres de cosmética natural y experiencias botánicas",
+      "serviceType": "Taller de cosmética natural",
+      "description": "Talleres de cosmética natural para grupos: cuidado del cabello rizado, maceraciones botánicas, aromaterapia, ungüentos, sales de baño y mascarillas. Duración de 2 horas y media.",
+      "provider": {
+        "@id": "https://www.danaisnatural.com/#organizacion"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Tarragona y Barcelona"
+      },
+      "url": "https://www.danaisnatural.com/experiencias/",
+      "offers": {
+        "@type": "Offer",
+        "price": "39",
+        "priceCurrency": "EUR",
+        "description": "Cumpleaños, despedidas y eventos privados, desde 39 € por persona con un mínimo de 8 participantes."
+      }
+    }
+  ]
 }
-</script>
+  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -404,6 +480,20 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
   .hero-btns-3{flex-direction:column;align-items:stretch}
   .hero-btns-3 .btn{width:100%}
 }
+
+/* El video del hero ya lleva el logo de la marca en el centro. El bloque de
+   texto se limita en ancho y se ancla abajo a la izquierda para no cruzarse
+   con el, y lleva su propio velo porque el video cambia de luminosidad. */
+.hero-text{max-width:30rem}
+.hero-text::before{
+  content:"";position:absolute;inset:-2rem -3rem -2rem -2rem;z-index:-1;
+  background:radial-gradient(ellipse at 30% 60%,rgba(20,61,44,.55) 0%,rgba(20,61,44,0) 70%);
+  pointer-events:none;
+}
+.hero-text h1{text-wrap:balance}
+@media (max-width:900px){
+  .hero-text{left:1.5rem;right:1.5rem;max-width:none;bottom:8vh}
+}
 </style>
 </head>
 <body>
@@ -415,8 +505,8 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
   </a>
   <div class="nav-links" id="nav-links">
     <a href="#inicio">Inicio</a>
-    <a href="#experiencias">Talleres</a>
     <a href="#productos">Productos</a>
+    <a href="#experiencias">Talleres</a>
     <a href="#ingredientes">Ingredientes</a>
     <a href="#enciclopedia">Enciclopedia</a>
     <a href="diagnostico.html">Diagnóstico</a>
@@ -436,8 +526,8 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-text rev">
     <span class="eyebrow section-label">Barcelona · Tarragona · Terres de l'Ebre · Cosmética Botánica</span>
-    <h1>Crea tu cosmética<br><em>con tus manos</em></h1>
-    <p>Cosmética botánica para rizos, talleres para grupos y un diagnóstico capilar gratuito. Empieza por donde quieras.</p>
+    <h1>Cosmética natural<br><em>para tus rizos</em></h1>
+    <p>Elaborada a mano en la Costa Daurada con ingredientes botánicos del Mediterráneo. Talleres para grupos y diagnóstico capilar gratuito.</p>
     <div class="hero-btns hero-btns-3">
       <a href="#productos" class="btn btn-gold">Ver productos</a>
       <a href="experiencias/" class="btn btn-outline">Talleres y experiencias</a>
@@ -467,52 +557,6 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
     <span>Desde Panamá 2017</span><span>✦</span>
   </div>
 </div>
-
-<!-- ═══════════════════════════════ EXPERIENCIAS DANAIS ═══════════════════════════════ -->
-<section class="section exp-home" id="experiencias" aria-label="Experiencias Danais">
-  <div class="section-inner">
-    <div class="section-header rev">
-      <span class="eyebrow section-label">Experiencias Danais</span>
-      <h2>Experiencias Danais</h2>
-      <p>Talleres botánicos mediterráneos para cumpleaños, empresas, asociaciones, ferias y grupos privados.</p>
-    </div>
-    <p class="exp-home-lead rev">Creamos experiencias de cosmética natural, cuidado capilar y bienestar para aprender, compartir y llevarte una creación personalizada. Una propuesta práctica, sensorial y memorable con el sello natural de Danais.</p>
-    <p class="exp-zona rev"><strong>Dónde vamos:</strong> Barcelona y provincia de Tarragona — Reus, Salou, Cambrils, Miami Platja, Hospitalet de l'Infant y toda la Costa Daurada hasta Vinaròs. Fuera de esa zona, consúltanos.</p>
-    <ul class="exp-tarifas rev" aria-label="Tarifas orientativas">
-      <li><span>Cumpleaños, despedidas y eventos privados</span><strong>desde 39 € / persona</strong><small>mínimo 8 participantes · 2 h 30 min de taller</small></li>
-      <li><span>Empresas y team building</span><strong>presupuesto a medida</strong><small>en vuestras oficinas o en un espacio preparado</small></li>
-      <li><span>Hoteles y turismo</span><strong>presupuesto a medida</strong><small>según grupo, temporada y montaje</small></li>
-    </ul>
-    <p class="exp-tarifas-nota rev">Precios orientativos. El presupuesto final depende del taller elegido, el número de participantes, los materiales, el desplazamiento y los extras.</p>
-    <figure class="exp-home-figure rev">
-      <a href="experiencias/" aria-label="Ver Experiencias Danais">
-        <img src="assets/experiencias/experiencias-cuadrada.jpg" alt="Experiencias botánicas a medida: talleres de cosmética natural Danais para grupos" loading="lazy" onerror="this.closest('.exp-home-figure').remove()">
-      </a>
-    </figure>
-    <div class="exp-home-grid">
-      <div class="exp-card rev">
-        <div class="exp-ic">🎉</div>
-        <h4>Cumpleaños y celebraciones</h4>
-        <p>Actividades creativas y bonitas para grupos que buscan una experiencia diferente.</p>
-      </div>
-      <div class="exp-card rev">
-        <div class="exp-ic">🌿</div>
-        <h4>Empresas y bienestar</h4>
-        <p>Pausas botánicas, team building y experiencias wellness para equipos.</p>
-      </div>
-      <div class="exp-card rev">
-        <div class="exp-ic">🧴</div>
-        <h4>Talleres de cosmética natural</h4>
-        <p>Macerados, ungüentos, aromaterapia, sales de baño, mascarillas y cosmética capilar.</p>
-      </div>
-    </div>
-    <div class="exp-home-cta rev">
-      <a href="experiencias/" class="btn btn-teal">Ver experiencias</a>
-      <a href="docs/experiencias-danais-dossier.pdf" target="_blank" rel="noopener" class="btn btn-outline-dark">Descargar dossier</a>
-      <a href="https://wa.me/34624702715?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20Experiencias%20Danais%20para%20un%20grupo." target="_blank" rel="noopener" class="btn btn-wa">Consultar por WhatsApp</a>
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════════════════════════ PRODUCTOS ═══════════════════════════════ -->
 <section class="section products-bg" id="productos">
@@ -669,6 +713,46 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
     </div>
   </div>
 </div>
+
+<!-- ═══════════════════════════════ EXPERIENCIAS DANAIS ═══════════════════════════════ -->
+<section class="section exp-home" id="experiencias" aria-label="Experiencias Danais">
+  <div class="section-inner">
+    <div class="section-header rev">
+      <span class="eyebrow section-label">Talleres y experiencias</span>
+      <h2>Experiencias Danais</h2>
+      <p>Talleres de cosmética natural para cumpleaños, empresas, asociaciones y grupos privados.</p>
+    </div>
+    <p class="exp-home-lead rev">Dos horas y media con las manos en la masa. Eliges tu fórmula, la elaboras tú y te llevas puesto lo que has hecho. Trabajamos con plantas del Mediterráneo —olivo, romero, lavanda, caléndula— y te explicamos qué hace cada ingrediente y por qué. Sin nombres impronunciables ni promesas que no se puedan cumplir.</p>
+    <p class="exp-zona rev"><strong>Dónde vamos:</strong> Barcelona y provincia de Tarragona — Reus, Salou, Cambrils, Miami Platja, Hospitalet de l'Infant y toda la Costa Daurada hasta Vinaròs. Fuera de esa zona, consúltanos.</p>
+    <figure class="exp-home-figure rev">
+      <a href="experiencias/" aria-label="Ver Experiencias Danais">
+        <img src="assets/experiencias/experiencias-cuadrada.jpg" alt="Experiencias botánicas a medida: talleres de cosmética natural Danais para grupos" loading="lazy" onerror="this.closest('.exp-home-figure').remove()">
+      </a>
+    </figure>
+    <div class="exp-home-grid">
+      <div class="exp-card rev">
+        <div class="exp-ic">🎉</div>
+        <h4>Cumpleaños y celebraciones</h4>
+        <p>Actividades creativas y bonitas para grupos que buscan una experiencia diferente.</p>
+      </div>
+      <div class="exp-card rev">
+        <div class="exp-ic">🌿</div>
+        <h4>Empresas y bienestar</h4>
+        <p>Pausas botánicas, team building y experiencias wellness para equipos.</p>
+      </div>
+      <div class="exp-card rev">
+        <div class="exp-ic">🧴</div>
+        <h4>Talleres de cosmética natural</h4>
+        <p>Macerados, ungüentos, aromaterapia, sales de baño, mascarillas y cosmética capilar.</p>
+      </div>
+    </div>
+    <div class="exp-home-cta rev">
+      <a href="experiencias/" class="btn btn-teal">Ver experiencias</a>
+      <a href="docs/experiencias-danais-dossier.pdf" target="_blank" rel="noopener" class="btn btn-outline-dark">Descargar dossier</a>
+      <a href="https://wa.me/34624702715?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20Experiencias%20Danais%20para%20un%20grupo." target="_blank" rel="noopener" class="btn btn-wa">Consultar por WhatsApp</a>
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════════════════════════ INGREDIENTES ═══════════════════════════════ -->
 <section class="section ingredientes-bg" id="ingredientes">

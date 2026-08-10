@@ -395,6 +395,15 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
   .talleres-grid{grid-template-columns:1fr 1fr}
   .rizo-cards{grid-template-columns:1fr}
 }
+
+/* Hero con tres entradas. Con dos botones bastaba el flex por defecto; con
+   tres se desbordaba en movil, asi que se envuelven y se centran. */
+.hero-btns-3{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+.hero-btns-3 .btn{flex:0 1 auto}
+@media (max-width:520px){
+  .hero-btns-3{flex-direction:column;align-items:stretch}
+  .hero-btns-3 .btn{width:100%}
+}
 </style>
 </head>
 <body>
@@ -428,10 +437,11 @@ footer{background:var(--tx);color:rgba(255,255,255,.6);padding:4rem 3rem 2rem}
   <div class="hero-text rev">
     <span class="eyebrow section-label">Barcelona · Tarragona · Terres de l'Ebre · Cosmética Botánica</span>
     <h1>Crea tu cosmética<br><em>con tus manos</em></h1>
-    <p>Talleres y experiencias botánicas para empresas, hoteles, celebraciones y grupos. Aprendes, elaboras y te llevas tu propia creación.</p>
-    <div class="hero-btns">
-      <a href="experiencias/" class="btn btn-gold">Reservar un taller</a>
-      <a href="#experiencias" class="btn btn-outline">Ver experiencias</a>
+    <p>Cosmética botánica para rizos, talleres para grupos y un diagnóstico capilar gratuito. Empieza por donde quieras.</p>
+    <div class="hero-btns hero-btns-3">
+      <a href="#productos" class="btn btn-gold">Ver productos</a>
+      <a href="experiencias/" class="btn btn-outline">Talleres y experiencias</a>
+      <a href="diagnostico.html" class="btn btn-outline">Diagnóstico capilar</a>
     </div>
   </div>
 </section>
